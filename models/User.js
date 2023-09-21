@@ -48,6 +48,8 @@ User.init(
         len: [8], 
       },
     },
+
+    // multer is an npm package we can use
     profile_photo: {
       type: DataTypes.STRING,
       allowNull: true,
@@ -59,7 +61,7 @@ User.init(
     timestamps: true,
     freezeTableName: true, 
     underscored: true,
-    modelName: 'User',
+    modelName: 'user',
     hooks: {
         beforeCreate: async (newUser) => {
             newUser.password = await bcrypt.hash(newUser.password, 10);
