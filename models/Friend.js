@@ -43,7 +43,7 @@ Friend.init(
   },
   {
     sequelize,
-    modelName: 'Friend',
+    modelName: 'friend',
     timestamps: false, 
     underscored: true,
   }
