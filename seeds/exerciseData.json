@@ -1,0 +1,56 @@
+[
+    {
+        "title": "Running",
+        "minutes": "30",
+        "calories_per_hour": "808",
+        "user_id": "2"
+    },
+    {
+        "title": "Bicycling",
+        "minutes": "60",
+        "calories_per_hour": "596",
+        "user_id": "3"
+    },
+    {
+        "title": "Circuit Training",
+        "minutes": "30",
+        "calories_per_hour": "596",
+        "user_id": "2"
+    },
+    {
+        "title": "Jump Rope",
+        "minutes": "15",
+        "calories_per_hour": "562",
+        "user_id": "4"
+    },
+    {
+        "title": "Stationary Bicycling",
+        "minutes": "60",
+        "calories_per_hour": "520",
+        "user_id": "8"
+    },
+    {
+        "title": "Rowing Machine",
+        "minutes": "30",
+        "calories_per_hour": "520",
+        "user_id": "6"
+    },
+    {
+        "title": "Swimming",
+        "minutes": "90",
+        "calories_per_hour": "492",
+        "user_id": "2"
+    },
+    {
+        "title": "Hiking",
+        "minutes": "90",
+        "calories_per_hour": "492",
+        "user_id": "3"
+    },
+    {
+        "title": "Aerobic Dance",
+        "minutes": "60",
+        "calories_per_hour": "492",
+        "user_id": "5"
+    }
+  ]

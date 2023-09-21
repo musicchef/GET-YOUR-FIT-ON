@@ -15,8 +15,8 @@ Exercise.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    content: {
-      type: DataTypes.STRING,
+    minutes: {
+      type: DataTypes.INTEGER,
       allowNull: false,
     },
     calories_per_hour: {
