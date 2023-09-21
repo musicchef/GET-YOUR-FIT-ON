@@ -1,0 +1,68 @@
+[
+    {
+        "food_name": "Chicken breast",
+        "calorie_count": "83",
+        "servings": "2",
+        "user_id": "2"
+    },
+    {
+        "food_name": "Lasagna",
+        "calorie_count": "401",
+        "servings": "1",
+        "user_id": "1"
+    },
+    {
+        "food_name": "Cheese Pizza",
+        "calorie_count": "280",
+        "servings": "2",
+        "user_id": "6"
+    },
+    {
+        "food_name": "Banana",
+        "calorie_count": "121",
+        "servings": "1",
+        "user_id": "4"
+    },
+    {
+        "food_name": "1% milk",
+        "calorie_count": "120",
+        "servings": "1",
+        "user_id": "2"
+    },
+    {
+        "food_name": "Quesadilla",
+        "calorie_count": "673",
+        "servings": "1",
+        "user_id": "2"
+    },
+    {
+        "food_name": "Pasta with meatballs",
+        "calorie_count": "379",
+        "servings": "1",
+        "user_id": "8"
+    },
+    {
+        "food_name": "Hamburger",
+        "calorie_count": "540",
+        "servings": "1",
+        "user_id": "9"
+    },
+    {
+        "food_name": "Sushi",
+        "calorie_count": "349",
+        "servings": "2",
+        "user_id": "7"
+    },
+    {
+        "food_name": "Taco",
+        "calorie_count": "210",
+        "servings": "3",
+        "user_id": "4"
+    },
+    {
+        "food_name": "Steamed broccoli",
+        "calorie_count": "54",
+        "servings": "1",
+        "user_id": "5"
+    }
+]

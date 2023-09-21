@@ -18,7 +18,7 @@ Nutrition.init(
         calorie_count: {
             type: DataTypes.INTEGER,
             allowNull: false,
-        },
+        }
     },
     {
         sequelize,
