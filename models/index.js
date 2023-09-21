@@ -1,6 +1,7 @@
 const Exercise = require('./Exercise');
 const User = require('./User');
 const Friend = require('./Friend');
+const Nutrition = require('./Nutrition');
 
 
   User.hasMany(Exercise, {
@@ -18,6 +19,15 @@ const Friend = require('./Friend');
     foreignKey: 'user_id', 
     otherKey: 'friend_id', 
   });
+
+  User.hasMany(Nutrition, {
+    foreignKey: 'user_id',
+    onDelete: 'CASCADE'
+  });
+
+  Nutrition.belongsTo(User, {
+    foreignKey: 'user_id'
+  })
 
 
 
