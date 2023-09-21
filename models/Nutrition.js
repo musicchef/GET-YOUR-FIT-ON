@@ -11,6 +11,10 @@ Nutrition.init(
             primaryKey: true,
             autoIncrement: true,
         },
+        food_name: {
+            type: DataTypes.STRING,
+            allowNull: false,
+        },
         calorie_count: {
             type: DataTypes.INTEGER,
             allowNull: false,
