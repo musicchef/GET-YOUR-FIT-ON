@@ -15,8 +15,6 @@ const Friend = require('./Friend');
   User.belongsToMany(User, {
     as: 'friends', 
     through: Friend, 
-    foreignKey: 'user_id', 
-    otherKey: 'friend_id', 
   });
 
 
