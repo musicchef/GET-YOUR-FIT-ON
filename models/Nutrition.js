@@ -35,6 +35,7 @@ Nutrition.init(
 		timestamps: true,
 		underscored: true,
 	}
+
 );
 
 module.exports = Nutrition;

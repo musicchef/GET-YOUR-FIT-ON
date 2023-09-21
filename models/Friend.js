@@ -6,11 +6,10 @@ class Friend extends Model {}
 Friend.init(
   {
     id: {
-      type: DataTypes.UUID, 
-      // when doing research it was recommended to use uuid's for friendship records, can change to INTEGER for consistency with other models later if preferred
-      defaultValue: DataTypes.UUIDV4,
+      type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true,
+      autoIncrement: true,
     },
     // This is the user making the friend request
     user_id: {

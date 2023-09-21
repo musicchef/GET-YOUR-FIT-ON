@@ -1,0 +1,74 @@
+[
+    {
+        "first_name": "John",
+        "last_name": "Smith",
+        "username": "john123",
+        "email": "john@hotmail.com",
+        "password": "password12345",
+        "profile_photo": ""
+    },
+    {
+        "first_name": "Sara",
+        "last_name": "Franklin",
+        "username": "sararocks5",
+        "email": "sara@gmail.com",
+        "password": "fishfry234",
+        "profile_photo": ""
+    },
+    {
+        "first_name": "Kathryn",
+        "last_name": "Jones",
+        "username": "katykat34",
+        "email": "katy@hotmail.com",
+        "password": "password12345",
+        "profile_photo": ""
+    },
+    {
+        "first_name": "Patrick",
+        "last_name": "Williamson",
+        "username": "willy24",
+        "email": "pw52@gmail.com",
+        "password": "frankytoes25",
+        "profile_photo": ""
+    },
+    {
+        "first_name": "Bryce",
+        "last_name": "Frank",
+        "username": "bfry26",
+        "email": "john@hotmail.com",
+        "password": "password12345",
+        "profile_photo": ""
+    },    
+    {
+        "first_name": "Keri",
+        "last_name": "Palma",
+        "username": "kpalm33",
+        "email": "kpalm@gmail.com",
+        "password": "passowrd",
+        "profile_photo": ""
+    }, 
+    {
+        "first_name": "Edward",
+        "last_name": "Carter",
+        "username": "edward123",
+        "email": "ec123@gmail.com",
+        "password": "password12345",
+        "profile_photo": ""
+    },
+    {
+        "first_name": "Karen",
+        "last_name": "Pieder",
+        "username": "karen234",
+        "email": "karen@aol.com",
+        "password": "password",
+        "profile_photo": ""
+    },
+    {
+        "first_name": "Phyllis",
+        "last_name": "James",
+        "username": "pj238",
+        "email": "pj238@gmail.com",
+        "password": "pjamas",
+        "profile_photo": ""
+    }
+  ]
