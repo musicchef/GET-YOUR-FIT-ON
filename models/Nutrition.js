@@ -19,18 +19,6 @@ Nutrition.init(
             type: DataTypes.INTEGER,
             allowNull: false,
         },
-        carb_count: {
-            type: DataTypes.INTEGER,
-            allowNull: false,
-        },
-        protein_content: {
-            type: DataTypes.INTEGER,
-            allowNull: false,
-        },
-        fat_content: { 
-            type: DataTypes.INTEGER, 
-            allowNull: false
-        },
     },
     {
         sequelize,
