@@ -1,7 +1,8 @@
 const router = require('express').Router();
-const { User, Exercise } = require('../../models/')
+const { User, Exercise } = require('../../models/');
+const withAuth = require('../../utils/auth');
 
-router.get('/', async (req, res) => {
+router.get('/', withAuth, async (req, res) => {
     try {
         const exerciseData = await User.findByPk({
             attributes: { exclude: ['password'] },
@@ -16,6 +17,19 @@ router.get('/', async (req, res) => {
         res.status(500).json(err);
     }
 });
+
+router.post('/', withAuth, async (req, res) => {
+    try {
+      const newExerciseData = await Exercise.create({
+        ...req.body,
+        user_id: req.session.user_id,
+      });
+  
+      res.status(200).json(newExerciseData);
+    } catch (err) {
+      res.status(400).json(err);
+    }
+  }); 
 
 router.delete('/:id', withAuth, async (req, res) => {
     try {
