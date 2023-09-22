@@ -29,4 +29,4 @@ const Nutrition = require('./Nutrition');
 
 
 
-  module.exports = { User, Exercise, Nutrition };
+  module.exports = { User, Exercise, Nutrition, Friend };
