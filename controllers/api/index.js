@@ -7,6 +7,7 @@ const friendsRoutes = require('./friendsRoutes')
 router.use('/user', userRoutes);
 router.use('/workouts', exerciseRoutes);
 router.use('/food', nutritionRoutes);
+router.use('/friends', friendsRoutes)
 
 
 module.exports = router;

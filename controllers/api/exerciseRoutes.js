@@ -4,20 +4,18 @@ const { User, Exercise } = require('../../models/')
 router.get('/', async (req, res) => {
     try {
         const exerciseData = await User.findByPk({
-            include: [
-                {
-                    model: Exercise
-                },
-            ],
+            attributes: { exclude: ['password'] },
+            include: [{ model: Exercise }],
         });
-
-        res.status(200).json(exerciseData);
-    } catch (err) {
+        const exercise = exerciseData.get({ plain: true });
+        res.render('exercise', {
+            ...exercise,
+            logged_in: req.session.logged_in
+        })
+        } catch (err) {
         res.status(500).json(err);
     }
 });
-
-module.exports = router;
 
 router.delete('/:id', withAuth, async (req, res) => {
     try {

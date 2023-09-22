@@ -6,7 +6,7 @@ const {User, Nutrition, Friend, Exercise}= require('../models');
 //route to get profile page
 router.get('/', withAuth, async (req, res) => {
     try {
-      const userData = await User.findByPk(req.params.id, {
+      const userData = await User.findByPk(req.session.user_id, {
         attributes: {exclude: ['password']},
         include: [{ all:true, nested:true }]
     });

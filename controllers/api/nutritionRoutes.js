@@ -3,12 +3,9 @@ const { User, Nutrition } = require('../../models/')
 
 router.get('/', async (req, res) => {
     try {
-        const nutritionData = await User.finbyPK({
-            include: [
-                {
-                    model: Nutrition
-                },
-            ],
+        const nutritionData = await User.findbyPK({
+            attributes: { exclude: ['password'] },
+            include: [{ model: Nutrition }],
         });
         const nutrition = nutritionData.get({plain: true});
         res.render('nutrition', {
