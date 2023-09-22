@@ -24,9 +24,9 @@ const seedDatabase = async () => {
       ...nutrtion,
     });
   }
-  for (const friend of friendData) {
+  for (const friend of exerciseData) {
     await Friend.create({
-        ...friend,
+        ...exercise,
     });
   }
   process.exit(0);
