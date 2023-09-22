@@ -18,10 +18,12 @@ const seedDatabase = async () => {
     await Exercise.create({
       ...exercise,
     });
+  }
   for (const nutrtion of nutritionData) {
     await Nutrition.create({
       ...nutrtion,
     });
+  }
   for (const friend of friendData) {
     await Friend.create({
         ...friend,
