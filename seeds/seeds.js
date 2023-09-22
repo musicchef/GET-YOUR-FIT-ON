@@ -4,7 +4,7 @@ const { User, Exercise, Friend, Nutrition } = require('../models');
 const userData = require('./userData.json');
 const exerciseData = require('./exerciseData.json');
 const nutritionData = require('./nutritionData.json');
-const friendData = require('./friendsData.json');
+const friendsData = require('./friendsData.json');
 
 const seedDatabase = async () => {
   await sequelize.sync({ force: true });
@@ -24,9 +24,9 @@ const seedDatabase = async () => {
       ...nutrtion,
     });
   }
-  for (const friend of exerciseData) {
+  for (const friend of friendsData) {
     await Friend.create({
-        ...exercise,
+        ...friend,
     });
   }
   process.exit(0);
