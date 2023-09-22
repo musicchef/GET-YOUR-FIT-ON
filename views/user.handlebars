@@ -1,0 +1,28 @@
+        <section class="user-info">
+            <h2>{{ user.username }}'s Profile</h2>
+        </section>
+        <section clas="profile-pic">
+            <img src="{{ user.profile_photo }}" alt="{{ user.username }}" class="profile-picture">
+        </section>
+        <section class="user-activities">
+            <h2>Exercises</h2>
+            <ul>
+                {{#each exercise as exercises }}
+                    <li>{{ user.exercise.title }} for <span id="workoutMinutes">{{ user.exercise.minutes }}</span> minutes<br>
+                    This exercise burns <span id="caloriesPerhour">{{ user.exercise.calories_per_hour }}</span> calories per hour.<br>
+                    You burned <span id="caloriesBurned"></span> calories!
+                    </li>
+                {{/each}}
+            </ul>
+        </section>
+        <section class="user-nutrtion">
+            <h2>Nutrition</h2>
+            <ul>
+                {{#each nutrition as nutritions }} 
+                {{!-- Haha wth is nutritions? --}}
+                <li><span id='servings'>{{ user.nutrtion.calorie_count_servings }}</span> serving(s) of {{ user.nutrition.food_name }}<br>
+                There are <span id='calsPerServing'>{{ user.nutrition.calorie_count_per_serving }}</span> calories per serving.
+                You consumed <span id='caloriesConsumed'></span> calories.
+                </li>
+            </ul>
+        </section>
