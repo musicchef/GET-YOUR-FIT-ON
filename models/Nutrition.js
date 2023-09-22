@@ -23,6 +23,13 @@ Nutrition.init(
 			type: DataTypes.INTEGER,
 			allowNull: false,
 		},
+		user_id: {
+			type: DataTypes.INTEGER,
+			references: {
+			  model: 'user',
+			  key: 'id',
+			},
+		},
 		meal_date: {
 			type: DataTypes.DATE,
 			allowNull: false,
