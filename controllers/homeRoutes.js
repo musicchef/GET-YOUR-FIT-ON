@@ -1,4 +1,6 @@
 const router = require('express').Router();
+const withAuth = require ('../utils/auth');
+const {User, Nutrition, Friend, Exercise}= require('../models');
 
 router.get('/', async (req, res) => {
   try {
@@ -11,8 +13,21 @@ router.get('/', async (req, res) => {
   }
 });
 
+
+
+
+
+
 router.get('/login', (req, res) => {
+  if (req.session.logged_in) {
+    res.redirect('/profile');
+    return;
+  }
   res.render('login');
+});
+
+router.get('/*', (req, res) => {
+  res.redirect('/');
 });
 
 module.exports = router;
