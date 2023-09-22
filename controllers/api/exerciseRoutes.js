@@ -6,7 +6,11 @@ router.get('/', withAuth, async (req, res) => {
     try {
         const exerciseData = await User.findByPk({
             attributes: { exclude: ['password'] },
-            include: [{ model: Exercise }],
+            include: [{ model: Exercise,
+            where: {
+              exercise_date :   
+            } }],
+
         });
         const exercise = exerciseData.get({ plain: true });
         res.render('exercise', {
