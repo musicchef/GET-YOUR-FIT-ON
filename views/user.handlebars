@@ -4,7 +4,7 @@
     <img src="{{ profile_photo }}" alt="{{ username }}" class="profile-picture">
 </section>
 <section class="user-activities">
-    <h2>Exercises</h2>
+    <h2>Today's Exercises</h2>
     <ul>
         {{#each exercise as |exercise|}}
             <li>
@@ -16,7 +16,7 @@
     </ul>
 </section>
 <section class="user-nutrition">
-    <h2>Nutrition</h2>
+    <h2>Today's Nutrition</h2>
     <ul>
         {{#each nutrition as |nutrition|}}
             <li>
@@ -27,5 +27,12 @@
         {{/each}}
     </ul>
 </section>
+
+<div class="myExercises">
+    <button type="button" class="btn btn-primary" id="exerciseButton">My Exercises</button>
+</div>
+<div class="myNutrition">
+    <button type="button" class="btn btn-primary" id="nutritionButton">My Nutrition</button>
+</div>
 
 <script src="../public/js/userHandlebars.js"></script>
