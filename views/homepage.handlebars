@@ -10,3 +10,31 @@
 
 </div>
     
+<!DOCTYPE html>
+<html lang="en">
+
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      {{#unless logged_in}}
+      <li class="nav-item">
+        <a class="nav-link" href="/login">Profile</a>
+      </li>
+      {{/unless}}
+      {{#if logged_in}}
+      <li class="nav-item">
+        <a class="nav-link" href="/profile">Profile</a>
+      </li>
+      <button type="button" class="btn btn-outline-secondary">Logout</button>
+      {{/if}}
+
+      <li class="nav-item">
+        <a class="nav-link" href="/login">Login</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+<main>
+  {{{ body }}}
+</main>
+</body>

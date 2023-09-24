@@ -3,24 +3,24 @@
         "user_id": "1",
         "friend_id": "2",
         "status": "accepted",
-        "created_at": "9/15/2022"
+        "created_at": "09/15/2022"
     },
     {
         "user_id": "8",
         "friend_id": "2",
         "status": "accepted",
-        "created_at": "9/17/2022"
+        "created_at": "09/17/2022"
     },
     {
         "user_id": "6",
         "friend_id": "3",
         "status": "accepted",
-        "created_at": "9/15/2023"
+        "created_at": "09/15/2023"
     },
     {
         "user_id": "5",
         "friend_id": "2",
         "status": "accepted",
-        "created_at": "9/22/2022"
+        "created_at": "09/22/2022"
     }
 ]
