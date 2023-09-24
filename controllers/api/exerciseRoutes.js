@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const { User, Exercise } = require('../../models/');
 const withAuth = require('../../utils/auth');
+const dayjs = require('dayjs');
 
 router.get('/', withAuth, async (req, res) => {
     try {
@@ -8,7 +9,7 @@ router.get('/', withAuth, async (req, res) => {
             attributes: { exclude: ['password'] },
             include: [{ model: Exercise,
             where: {
-              exercise_date :   
+              exercise_date : dayjs().format('MM/DD/YYYY')  
             } }],
 
         });

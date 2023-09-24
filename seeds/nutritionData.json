@@ -4,76 +4,76 @@
         "calorie_count_per_serving": "83",
         "calorie_count_servings": "2",
         "user_id": "2",
-        "meal_date": "9/3/2023"
+        "meal_date": "09/03/2023"
     },
     {
         "food_name": "Lasagna",
         "calorie_count_per_serving": "401",
         "calorie_count_servings": "1",
         "user_id": "1",
-        "meal_date": "9/4/2023"
+        "meal_date": "09/04/2023"
     },
     {
         "food_name": "Cheese Pizza",
         "calorie_count_per_serving": "280",
         "calorie_count_servings": "2",
         "user_id": "6",
-        "meal_date": "9/3/2023"
+        "meal_date": "09/03/2023"
     },
     {
         "food_name": "Banana",
         "calorie_count_per_serving": "121",
         "calorie_count_servings": "1",
         "user_id": "4",
-        "meal_date": "9/10/2023"
+        "meal_date": "09/10/2023"
     },
     {
         "food_name": "1% milk",
         "calorie_count_per_serving": "120",
         "calorie_count_servings": "1",
         "user_id": "2",
-        "meal_date": "9/3/2023"
+        "meal_date": "09/03/2023"
     },
     {
         "food_name": "Quesadilla",
         "calorie_count_per_serving": "673",
         "calorie_count_servings": "1",
         "user_id": "2",
-        "meal_date": "9/3/2023"
+        "meal_date": "09/03/2023"
     },
     {
         "food_name": "Pasta with meatballs",
         "calorie_count_per_serving": "379",
         "calorie_count_servings": "1",
         "user_id": "8",
-        "meal_date": "9/3/2023"
+        "meal_date": "09/03/2023"
     },
     {
         "food_name": "Hamburger",
         "calorie_count_per_serving": "540",
         "calorie_count_servings": "1",
         "user_id": "9",
-        "meal_date": "9/3/2023"
+        "meal_date": "09/23/2023"
     },
     {
         "food_name": "Sushi",
         "calorie_count_per_serving": "349",
         "calorie_count_servings": "2",
         "user_id": "7",
-        "meal_date": "9/3/2023"
+        "meal_date": "09/23/2023"
     },
     {
         "food_name": "Taco",
         "calorie_count_per_serving": "210",
         "calorie_count_servings": "3",
         "user_id": "4",
-        "meal_date": "9/3/2023"
+        "meal_date": "09/22/2023"
     },
     {
         "food_name": "Steamed broccoli",
         "calorie_count_per_serving": "54",
         "calorie_count_servings": "1",
         "user_id": "5",
-        "meal_date": "9/3/2023"
+        "meal_date": "09/03/2023"
     }
 ]

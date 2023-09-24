@@ -4,62 +4,62 @@
         "minutes": "30",
         "calories_per_hour": "808",
         "user_id": "2",
-        "exercise_date": "9/15/2023"
+        "exercise_date": "09/15/2023"
     },
     {
         "title": "Bicycling",
         "minutes": "60",
         "calories_per_hour": "596",
         "user_id": "3",
-        "exercise_date": "9/17/2023"
+        "exercise_date": "09/17/2023"
     },
     {
         "title": "Circuit Training",
         "minutes": "30",
         "calories_per_hour": "596",
         "user_id": "2",
-        "exercise_date": "9/16/2023"
+        "exercise_date": "09/16/2023"
     },
     {
         "title": "Jump Rope",
         "minutes": "15",
         "calories_per_hour": "562",
         "user_id": "4",
-        "exercise_date": "9/18/2023"
+        "exercise_date": "09/23/2023"
     },
     {
         "title": "Stationary Bicycling",
         "minutes": "60",
         "calories_per_hour": "520",
         "user_id": "8",
-        "exercise_date": "9/19/2023"
+        "exercise_date": "09/19/2023"
     },
     {
         "title": "Rowing Machine",
         "minutes": "30",
         "calories_per_hour": "520",
         "user_id": "6",
-        "exercise_date": "9/20/2023"
+        "exercise_date": "09/23/2023"
     },
     {
         "title": "Swimming",
         "minutes": "90",
         "calories_per_hour": "492",
         "user_id": "2",
-        "exercise_date": "9/20/2023"
+        "exercise_date": "09/20/2023"
     },
     {
         "title": "Hiking",
         "minutes": "90",
         "calories_per_hour": "492",
         "user_id": "3",
-        "exercise_date": "9/18/2023"
+        "exercise_date": "09/18/2023"
     },
     {
         "title": "Aerobic Dance",
         "minutes": "60",
         "calories_per_hour": "492",
         "user_id": "5",
-        "exercise_date": "9/16/2023"
+        "exercise_date": "09/16/2023"
     }
   ]

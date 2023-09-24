@@ -1,12 +1,16 @@
 const router = require('express').Router();
 const { User, Nutrition } = require('../../models/');
 const withAuth = require('../../utils/auth');
+const dayjs = require('dayjs');
 
 router.get('/', async (req, res) => {
     try {
         const nutritionData = await User.findbyPK({
             attributes: { exclude: ['password'] },
-            include: [{ model: Nutrition }],
+            include: [{ model: Nutrtion,
+              where: {
+                meal_date : dayjs().format('MM/DD/YYYY')  
+              } }],
         });
         const nutrition = nutritionData.get({plain: true});
         res.render('nutrition', {
