@@ -16,14 +16,14 @@
     {
         "title": "Circuit Training",
         "minutes": "30",
-        "calories_per_hour": "596",
+        "calories_per_hour": "800",
         "user_id": "2",
         "exercise_date": "09/16/2023"
     },
     {
         "title": "Jump Rope",
         "minutes": "15",
-        "calories_per_hour": "562",
+        "calories_per_hour": "800",
         "user_id": "4",
         "exercise_date": "09/23/2023"
     },
