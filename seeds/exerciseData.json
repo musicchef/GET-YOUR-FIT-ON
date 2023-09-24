@@ -1,13 +1,13 @@
 [
     {
-        "title": "Running",
+        "title": "Run",
         "minutes": "30",
         "calories_per_hour": "808",
         "user_id": "2",
         "exercise_date": "09/15/2023"
     },
     {
-        "title": "Bicycling",
+        "title": "Bicycle",
         "minutes": "60",
         "calories_per_hour": "596",
         "user_id": "3",
@@ -28,7 +28,7 @@
         "exercise_date": "09/23/2023"
     },
     {
-        "title": "Stationary Bicycling",
+        "title": "Stationary Bicycle",
         "minutes": "60",
         "calories_per_hour": "520",
         "user_id": "8",

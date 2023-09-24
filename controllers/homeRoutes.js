@@ -1,6 +1,5 @@
 const router = require('express').Router();
-const withAuth = require ('../utils/auth');
-const {User, Nutrition, Friend, Exercise}= require('../models');
+const {Exercise}= require('../models');
 
 router.get('/', async (req, res) => {
   try {
@@ -19,6 +18,7 @@ router.get('/', async (req, res) => {
     res.status(500).json({ error: 'Internal Server Error' });
   }
 });
+
 
 router.get('/login', (req, res) => {
   if (req.session.logged_in) {
