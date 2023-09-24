@@ -34,7 +34,12 @@ Nutrition.init(
 		meal_date: {
 			type: DataTypes.DATE,
 			allowNull: false,
-			defaultValue: dayjs().format('MM/DD/YYYY')
+			defaultValue: DataTypes.NOW,
+			get() {
+			  const date = this.getDataValue('meal_date');
+			  return dayjs(date).format('MM/DD/YYYY');
+			}
+		  
 		},
 	},
 	{

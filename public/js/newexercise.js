@@ -91,4 +91,4 @@ const createExercise = async (event) => {
 ;
 
 
-createCommentButton.addEventListener('submit', createComment);
+createExerciseButton.addEventListener('submit', createExercise);

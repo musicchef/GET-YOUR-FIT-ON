@@ -17,7 +17,12 @@
     {{#each exercise as |exercise|}}
     <div class="row mb-2">
       <div class="col-md-8">
-        <h4><a href="/api/workouts/{{exercise.id}}">{{exercise.title}}</a></h4>
+        <h4>{{exercise.title}}</h4>
+        <ul>
+          <li>Minutes Completed: {{exercise.minutes}}</li>
+          <li>Total Calories Burned: {{calculateCalories exercise.minutes exercise.calories_per_hour}}}</li>
+        </ul> 
+        
       </div>
       <div class="col-md-4">
         <button class="btn btn-sm btn-danger " data-id="{{exercise.id}}">DELETE</button>
@@ -26,9 +31,11 @@
     {{/each}}
   </div>
   {{/if}}
+
+  <h5> Total Calories Burned Today: {{totalCalories exercises}}</h5>
  
 </div>
 
-<script src="./js/dashboard.js"></script>
+<script src="./js/exercise.js"></script>
 {{/if}}
 
