@@ -8,7 +8,7 @@ router.get('/', withAuth, async (req, res) => {
             attributes: { exclude: ['password'] },
             include: [{ model: Exercise,
             where: {
-              exercise_date :   
+              exercise_date : '2023-09-15 07:00:00'  
             } }],
 
         });
