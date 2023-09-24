@@ -1,7 +1,7 @@
 {{#if logged_in}}
 <div class="row text-center">
   <div class="col-auto">
-    <h2>Welcome, {{username}}! Here are your Exercises for today!</h2>
+    <h2>Welcome, {{username}} to the Exercise HomePage</h2>
   </div>
 </div>
 
@@ -10,17 +10,17 @@
         <button class="btn btn-lg btn-primary " id="newexercise-btn" >Add New Exercise</button>
       </a>
 
-{{#if blogposts.length}}
-   <div class="col-md-6 blogpost-list">
-    <h3>Current Blog Posts:</h3>
+{{#if exercise.length}}
+   <div class="col-md-6 exercise-list">
+    <h3>Today's Exercises:</h3>
 
-    {{#each blogposts as |blogpost|}}
+    {{#each exercise as |exercise|}}
     <div class="row mb-2">
       <div class="col-md-8">
-        <h4><a href="/dashboard/blogpost/{{blogpost.id}}">{{blogpost.title}}</a></h4>
+        <h4><a href="/api/workouts/{{exercise.id}}">{{exercise.title}}</a></h4>
       </div>
       <div class="col-md-4">
-        <button class="btn btn-sm btn-danger " data-id="{{blogpost.id}}">DELETE</button>
+        <button class="btn btn-sm btn-danger " data-id="{{exercise.id}}">DELETE</button>
       </div>
     </div>
     {{/each}}
