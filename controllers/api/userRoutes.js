@@ -1,5 +1,6 @@
 const router = require('express').Router();
-const { User } = require('../../models/')
+const { User } = require('../../models/');
+const cloudinary = require('cloudinary').v2;
 
 router.post('/signup', async (req, res) => {
     try {
@@ -57,4 +58,30 @@ router.post('/signup', async (req, res) => {
       res.status(404).end();
     }
   });
+
+  router.post('/upload', async (req, res) => {
+    try {
+      const result = await cloudinary.uploader.upload(req.file.path);
+      
+      const imageUrl = result.secure_url;
+  
+      const userId = req.session.user_id;
+      const user = await User.findByPk(userId);
+  
+      if (user) {
+        // Update the database with the new user imageURL
+        user.profile_photo = imageUrl;
+        await user.save();
+  
+        res.status(200).json({ imageUrl });
+      } else {
+        res.status(404).json({ error: 'User not found' });
+      }
+    } catch (error) {
+      console.error(error);
+      res.status(500).json({ error: 'Image upload failed' });
+    }
+  });
+  
+  
 module.exports = router;
