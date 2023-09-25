@@ -1,13 +1,21 @@
 <form class="signup-form w-50 container">
   <div class="form-group">
-    <label for="exampleInputEmail1">Username</label>
-    <input class="form-control" id="username-input" aria-describedby="emailHelp" placeholder="Enter email">
+    <label for="first_name">First Name</label>
+    <input class="form-control" id="firstname-input" aria-describedby="first_name" placeholder="Enter first name">
+  </div>
+  <div class="form-group">
+    <label for="last_name">Last Name</label>
+    <input class="form-control" id="lastname-input" aria-describedby="last_name" placeholder="Enter last name">
+  </div>
+  <div class="form-group">
+    <label for="username">Username</label>
+    <input class="form-control" id="username-input" aria-describedby="emailHelp" placeholder="Enter username">
     <small id="emailHelp" class="form-text text-muted">No Spaces. No Special Characters</small>
   </div>
   <div class="form-group">
     <label for="exampleInputEmail1">Email address</label>
     <input type="email" class="form-control" id="email-input" aria-describedby="emailHelp" placeholder="Enter email">
-    <small id="emailHelp" class="form-text text-muted">We'll (hopefully) never share your email with anyone else.</small>
+    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
   </div>
   <div class="form-group">
     <label for="password-input">Password</label>
@@ -18,3 +26,5 @@
 <br>
 <a href="/login" class="d-flex justify-content-center">Already have an account? Login here!</a>
 </form>
+
+<script src="./js/signup.js"></script>
