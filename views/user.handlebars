@@ -1,5 +1,5 @@
 {{#if logged_in}}
-<h2>{{ username }}'s Profile</h2>
+<h2>{{ username }}</h2>
 <section class="profile-pic">
     <img src="{{ profile_photo }}" alt="{{ username }}" class="profile-picture">
 </section>
@@ -33,6 +33,10 @@
 </div>
 <div class="myNutrition">
     <button type="button" class="btn btn-primary" id="nutritionButton">My Nutrition</button>
+</div>
+
+<div class="myFriends">
+    <button type="button" class="btn btn-primary" id="friendsButton">My Friends</button>
 </div>
 
 <script src="../public/js/userHandlebars.js"></script>
