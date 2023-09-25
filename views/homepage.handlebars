@@ -6,18 +6,17 @@
   </div>
 </div>
 
-<div>
-   <a class="col-md-4" href="/api/login"><button class="btn btn-lg btn-primary " id="login-btn" >Log In</button></a>
-</div>
-
-
 
 <p> The most recent exercises used:
-  {{order}}
+  {{#each exercise as |exercise|}}
+    <div class="row mb-2">
+      <div class="col-md-8">
+        <h4>{{exercise.title}}</h4>
+        <ul>
+            <li>Calories burned per hours: {{exercise.calories_per_hour}}</li>
+        </ul>
+      </div>
+    </div>
+  {{/each}}
 </p>
-
-
-login button
-homepage: exercises last 5 /popular home routes
-
-if exercise .length each exercise calories per minute
+ 
