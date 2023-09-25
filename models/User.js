@@ -30,6 +30,9 @@ User.init(
       allowNull: false,
       // Ensure usernames are unique
       unique: true,
+      validate: {
+        isAlphanumeric: true,
+      },
     },
     email: {
       type: DataTypes.STRING,

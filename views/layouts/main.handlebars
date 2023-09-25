@@ -27,12 +27,12 @@
       <li class="nav-item">
         <a class="nav-link" href="/profile">Profile</a>
       </li>
-      <button type="button" class="btn btn-outline-secondary">Logout</button>
-      {{/if}}
-
+      <button type="button" class="btn btn-outline-secondary" id="logout">Logout</button>
+      {{else}}
       <li class="nav-item">
         <a class="nav-link" href="/login">Login</a>
       </li>
+      {{/if}}
     </ul>
   </div>
 </nav>
@@ -40,5 +40,6 @@
   {{{ body }}}
 </main>
 <script src="/js/signup.js"></script>
+<script src="/js/logout.js"></script>
 </body>
 <html>

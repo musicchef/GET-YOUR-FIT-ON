@@ -23,14 +23,17 @@ router.get('/', withAuth, async (req, res) => {
     }
 });
 
-router.post('/', withAuth, async (req, res) => {
+router.post('/create-post', withAuth, async (req, res) => {
     try {
       const newExerciseData = await Exercise.create({
         ...req.body,
         user_id: req.session.user_id,
       });
   
-      res.status(200).json(newExerciseData);
+      res.render('newexercise', {
+        ...newExerciseData,
+        logged_in: req.session.logged_in
+    })
     } catch (err) {
       res.status(400).json(err);
     }
