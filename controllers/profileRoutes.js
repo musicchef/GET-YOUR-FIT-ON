@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const withAuth = require ('../utils/auth');
+const withAuth = require('../utils/auth');
 const {User, Nutrition, Friend, Exercise}= require('../models');
 
 //use withAuth middleware to prevent access to route
