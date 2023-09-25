@@ -1,13 +1,10 @@
-<div class=" mt-5 w-50 container ">
-    <form class=" justify-content-center ">
-        <div>
-            <div>
-                <input class="form-control" type="search" placeholder="Search" aria-label="Search">
-            </div>
-            <div class="mt-2">
-                <button class="w-25 btn my-2 my-sm-0" type="submit">Search Nutrition</button>
-                <button class="w-25 btn my-2 my-sm-0" type="submit">Search Fitness</button>
-            </div>
-        </div>
-    </form>
-</div>
+<form class="search-form mt-5 w-50 container ">
+    <div class="form-group">
+        <label for="search">Lookup Food or Exercises</label>
+        <input id="foodItem" class="form-control" placeholder="Search" aria-label="Search">
+    </div>
+    <button id="nutritionSearch" class=" w-25 btn my-2 my-sm-0" type="button">Search Nutrition</button>
+    <button class=" w-25 btn my-2 my-sm-0" type="button">Search Fitness</button>
+</form>
+
+<script src="/public/js/fetchApi.js"></script>
