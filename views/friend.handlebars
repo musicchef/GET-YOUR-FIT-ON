@@ -1,0 +1,41 @@
+<div class="friend-requests"><h1>Friend Requests</h1>
+  {{#if pendingRequests}}
+  <ul>
+    {{#each pendingRequests}}
+    <li>
+      <span>{{user.username}} wants to be your friend</span>
+      <button class="accept-friend" data-friend-id="{{user.id}}">Accept</button>
+      <button class="reject-friend" data-friend-id="{{user.id}}">Reject</button>
+    </li>
+    {{/each}}
+  </ul>
+  {{else}}
+  <p>No friend requests at the moment.</p>
+  {{/if}}
+</div>
+
+<div class="friend-search">
+  <h1>Search for Friends</h1>
+  <form id="friend-search-form">
+    <div class="form-group"></div>
+    <input type="text" id="friend-username" placeholder="Enter a username">
+    <button type="submit">Send Friend Request</button>
+    </div>
+  </form>
+</div>
+
+  <h1>Current Friends</h1>
+  {{#if friends}}
+  <ul>
+    {{#each friends}}
+    <li>
+      <img src="{{user.profile_photo}}" alt="{{user.username}}" width="50" height="50">
+      <span>{{user.username}}</span>
+    </li>
+    {{/each}}
+  </ul>
+  {{else}}
+  <p>You don't have any friends yet.</p>
+  {{/if}}
+
+ <script src="friendHandlebars.js"></script>

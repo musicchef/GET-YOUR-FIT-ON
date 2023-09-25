@@ -42,8 +42,9 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 
-  const nutritionButton = document.getElementById('nutritionButton');
+const nutritionButton = document.getElementById('nutritionButton');
 const exerciseButton = document.getElementById('exerciseButton');
+const friendsButton = document.getElementById('friendsButton');
 
  
 nutritionButton.addEventListener('click', function () {
@@ -53,4 +54,7 @@ nutritionButton.addEventListener('click', function () {
 exerciseButton.addEventListener('click', function () {
     window.location.href = '/api/exercise';
 });
-  
+
+friendsButton.addEventListener('click', function () {
+    window.location.href= '/api/friend';
+});
