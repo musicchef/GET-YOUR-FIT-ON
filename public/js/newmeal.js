@@ -1,67 +1,43 @@
-const createExerciseButton = document.querySelector('.exercise-form');
+const createMealButton = document.querySelector('.meal-form');
 
-const createExercise = async (event) => {
+const createMeal = async (event) => {
   event.preventDefault();
-  const exerciseForm = document.getElementById('new-exercise-form')
-  const exercise = document.querySelector('#categoriesselect1').value;
+  const mealForm = document.getElementById('new-meal-form')
+  const meal = document.querySelector('#categoriesselect1').value;
   const time= document.querySelector('#duration').value;
-  const caloriesphour= ''
-  if (exercise === 'Run') {
-        caloriesphour= 808;
+  const caloriespserving= ''
+  if (exercise === 'Chicken breast') {
+        caloriespserving= 83;
         return;
-  } else if (exercise === 'Jog') {
-         caloriesphour = 350;
+  } else if (meal === 'Lasagna') {
+         caloriespserving = 401;
          return;
-  } else if (exercise ==='Walk') {
-         caloriesphour = 200;
+  } else if (meal ==='Cheese Pizza') {
+         caloriespserving = 280;
          return;
-  } else if (exercise === 'Elliptical') {
-        caloriesphour = 650;
+  } else if (meal === 'Banana') {
+        caloriespserving = 121;
         return;
-  } else if (exercise === 'Stationary Bicycle') {
-        caloriesphour = 520;
+  } else if (meal === '1% Milk') {
+        caloriespserving = 120;
         return;
-  } else if (exercise === 'Bicycle') {
-        caloriesphour = 596;
+  } else if (meal === 'Quesadilla') {
+        caloriespserving = 673;
         return;
-  } else if (exercise === 'Circuit Training') {
-        caloriesphour = 800;
+  } else if (meal === 'Pasta with Meatballs') {
+        caloriespserving = 379;
         return;
-  } else if (exercise === 'Jump Rope') {
-        caloriesphour = 800;
+  } else if (meal === 'Hamburger') {
+        caloriespserving = 540;
         return;
-  } else if (exercise === 'Rowing Machine') {
-        caloriesphour = 520;
+  } else if (meal === 'Sushi') {
+        caloriespserving = 349;
         return;
-  } else if (exercise === 'Swimming') {
-        caloriesphour = 492;
+  } else if (meal === 'Taco') {
+        caloriespserving = 210;
         return;
-  } else if (exercise === 'Stationary Bicycle') {
-        caloriesphour = 520;
-        return;
-  } else if (exercise === 'Hiking') {
-        caloriesphour = 492;
-        return;
-  } else if (exercise === 'Aerobic Dance') {
-        caloriesphour = 492;
-        return;
-  } else if (exercise === 'HIIT') {
-        caloriesphour = 700;
-        return;
-  } else if (exercise === 'Weight Lifting') {
-        caloriesphour = 450;
-        return;
-  } else if (exercise === 'Yoga') {
-        caloriesphour = 250;
-        return;
-  } else if (exercise === 'Pilates') {
-        caloriesphour = 350;
-        return;
-  } else if (exercise === 'Rock Climbing') {
-        caloriesphour = 700;
-        return;
-  } else if (exercise === 'other'){
-        caloriesphour=400;
+  } else if (meal === 'Steamed Broccoli') {
+        caloriespserving = 541;
         return;
   };
   if (exercise&&time ) {
@@ -71,7 +47,7 @@ const createExercise = async (event) => {
         body: JSON.stringify({ 
           title: exercise, 
           minutes: time,
-          calories_per_hour: caloriesphour,
+          calories_per_hour: caloriespserving,
           user_id: exerciseForm.dataset.id
         }),
         headers: {
