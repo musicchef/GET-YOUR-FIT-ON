@@ -1,7 +1,9 @@
-require('dotenv').config;
+require('dotenv').config();
+
+food = 'chicken'
 
 async function getNutrition(foodItem) {
-    const fetchNutrition = await fetch(`https://api.nal.usda.gov/fdc/v1/food/search/?api_key=${process.env.NUTRITION_API_KEY}&query=${foodItem}`);
+    const fetchNutrition = await fetch(`https://api.nal.usda.gov/fdc/v1/foods/search?api_key=${process.env.NUTRITION_API_KEY}&query=${foodItem}&pageSize=1`);
     return fetchNutrition.json();
 };
 

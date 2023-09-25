@@ -78,6 +78,10 @@ router.get('/signup', (req, res) => {
   res.render('signup');
 });
 
+router.get('/explore', (req, res) => {
+  res.render('nutritionFetch');
+})
+
 router.get('/*', (req, res) => {
   res.redirect('/');
 });
