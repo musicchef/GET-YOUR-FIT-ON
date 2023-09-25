@@ -4,7 +4,7 @@ const createMeal = async (event) => {
   event.preventDefault();
   const mealForm = document.getElementById('new-meal-form')
   const meal = document.querySelector('#categoriesselect1').value;
-  const time= document.querySelector('#duration').value;
+  const servingn= document.querySelector('#duration').value;
   const caloriespserving= ''
   if (exercise === 'Chicken breast') {
         caloriespserving= 83;
@@ -40,15 +40,15 @@ const createMeal = async (event) => {
         caloriespserving = 541;
         return;
   };
-  if (exercise&&time ) {
+  if (meal&&servingn) {
     try {
-    const response = await fetch('/api/workouts', {
+    const response = await fetch('/api/food', {
         method: 'POST',
         body: JSON.stringify({ 
-          title: exercise, 
-          minutes: time,
-          calories_per_hour: caloriespserving,
-          user_id: exerciseForm.dataset.id
+          title: meal, 
+          number_of_servings: servingn,
+          calorie_count_per_serving: caloriespserving,
+          user_id: mealForm.dataset.id
         }),
         headers: {
           'Content-Type': 'application/json',
@@ -58,7 +58,7 @@ const createMeal = async (event) => {
       if (response.ok) {
         document.location.reload();
       } else {
-        alert('Failed to add exercise');
+        alert('Failed to add meal');
       }
     } catch (err) {
     console.log(err);
@@ -67,4 +67,4 @@ const createMeal = async (event) => {
 ;
 
 
-createExerciseButton.addEventListener('submit', createExercise);
+createMealButton.addEventListener('submit', createMeal);
