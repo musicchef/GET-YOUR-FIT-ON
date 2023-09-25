@@ -1,0 +1,22 @@
+{{#if logged_in}}
+
+<div class="row">
+  <div class="col-auto">
+    <h1>Welcome to Get Your Fit On!!</h1>
+  </div>
+</div>
+
+
+<p> The most recent exercises used:
+  {{#each exercise as |exercise|}}
+    <div class="row mb-2">
+      <div class="col-md-8">
+        <h4>{{exercise.title}}</h4>
+        <ul>
+            <li>Calories burned per hours: {{exercise.calories_per_hour}}</li>
+        </ul>
+      </div>
+    </div>
+  {{/each}}
+</p>
+ 

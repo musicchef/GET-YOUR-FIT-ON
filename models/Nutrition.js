@@ -16,6 +16,10 @@ Nutrition.init(
 			type: DataTypes.STRING,
 			allowNull: false,
 		},
+		meal_name: {
+			type: DataTypes.STRING,
+			allowNull: false,
+		},
 		calorie_count_per_serving: {
 			type: DataTypes.INTEGER,
 			allowNull: false,

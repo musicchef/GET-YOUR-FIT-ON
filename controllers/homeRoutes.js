@@ -1,6 +1,8 @@
 const router = require('express').Router();
+
 const { User, Exercise}= require('../models');
 const withAuth = require ('../utils/auth');
+
 
 router.get('/', async (req, res) => {
   try {
@@ -20,6 +22,7 @@ router.get('/', async (req, res) => {
   }
 });
 
+
 router.get('/profile', withAuth, async (req, res) => {
   try {
     const userData = await User.findByPk(req.session.user_id, {
@@ -36,6 +39,7 @@ router.get('/profile', withAuth, async (req, res) => {
     res.status(500).json(err);
   }
 })
+
 
 router.get('/login', (req, res) => {
   if (req.session.logged_in) {
