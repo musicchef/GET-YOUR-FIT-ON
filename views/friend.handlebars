@@ -1,0 +1,17 @@
+<div class="friend-search">
+    <label for="searchInput">Search for New Friends:</label>
+    <input type="text" id="friendSearchInput" placeholder="Enter username...">
+</div>
+
+<div class="friends-list">
+    <ul>
+        {{#each friend}}
+            <li>
+                <img src="{{ this.profile_photo }}" alt="{{ this.username }}'s Profile Picture">
+                    <h2>{{ this.username }}</h2>
+                </li>
+                {{/each}}
+            </ul>
+</div>
+
+ <script src="friendHandlebars.js"></script>
