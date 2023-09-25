@@ -48,13 +48,13 @@ const friendsButton = document.getElementById('friendsButton');
 
  
 nutritionButton.addEventListener('click', function () {
-    window.location.href = '/api/nutrition';
+    window.location.href = '/api/food';
 });
 
 exerciseButton.addEventListener('click', function () {
-    window.location.href = '/api/exercise';
+    window.location.href = '/api/workouts';
 });
 
 friendsButton.addEventListener('click', function () {
-    window.location.href= '/api/friend';
+    window.location.href= '/api/friends';
 });
