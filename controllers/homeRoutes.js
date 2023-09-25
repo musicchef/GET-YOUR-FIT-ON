@@ -1,5 +1,8 @@
 const router = require('express').Router();
-const {User, Nutrition, Friend, Exercise}= require('../models');
+
+const { User, Exercise}= require('../models');
+const withAuth = require ('../utils/auth');
+
 
 router.get('/', async (req, res) => {
   try {
@@ -18,6 +21,24 @@ router.get('/', async (req, res) => {
     res.status(500).json({ error: 'Internal Server Error' });
   }
 });
+
+
+router.get('/profile', withAuth, async (req, res) => {
+  try {
+    const userData = await User.findByPk(req.session.user_id, {
+      attributes: {exclude: ['password']},
+      include: [{ all:true, nested:true }]
+  });
+   
+  const user = userData.get({plain: true});
+   res.render('user', {
+    ...user,
+    logged_in: true
+   });
+  } catch(err) {
+    res.status(500).json(err);
+  }
+})
 
 
 router.get('/login', (req, res) => {

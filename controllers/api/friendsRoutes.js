@@ -12,13 +12,11 @@ router.get('/', async (req, res) => {
           model: Friend,
           as: 'friend_requests',
           where: { status: 'pending' }, 
-          include: [{ model: User, as: 'user' }], // Include the user who sent the request
         },
         {
           model: Friend,
           as: 'friends',
           where: { status: 'accepted' },
-          include: [{ model: User, as: 'user' }], // Include the current friends
         },
       ],
     });

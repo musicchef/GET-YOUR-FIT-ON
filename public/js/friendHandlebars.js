@@ -19,7 +19,8 @@ document.addEventListener('DOMContentLoaded', () => {
   
         if (response.ok) {
           alert('Friend request sent!');
-          friendUsernameInput.value = ''; // Clear the input field
+          // Clear the input field
+          friendUsernameInput.value = ''; 
         } else {
           alert('Error sending friend request');
         }
