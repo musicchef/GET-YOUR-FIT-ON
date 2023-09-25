@@ -1,5 +1,5 @@
+{{#if logged_in}}
 <h2>{{ username }}</h2>
-</section>
 <section class="profile-pic">
     <img src="{{ profile_photo }}" alt="{{ username }}" class="profile-picture">
 </section>
@@ -40,3 +40,4 @@
 </div>
 
 <script src="../public/js/userHandlebars.js"></script>
+{{/if}}

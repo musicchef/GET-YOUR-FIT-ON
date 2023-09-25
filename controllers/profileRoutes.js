@@ -10,7 +10,7 @@ router.get('/', withAuth, async (req, res) => {
         attributes: {exclude: ['password']},
         include: [{ all:true, nested:true }]
     });
-  
+     
     const user = userData.get({plain: true});
      res.render('user', {
       ...user,
