@@ -23,7 +23,7 @@ router.get('/', withAuth, async (req, res) => {
     }
 });
 
-router.post('/create-post', withAuth, async (req, res) => {
+router.post('/create', withAuth, async (req, res) => {
     try {
       const newExerciseData = await Exercise.create({
         ...req.body,
