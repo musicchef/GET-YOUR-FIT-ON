@@ -1,1 +1,41 @@
-<h1>this is the exercise handlebar</h1>
+{{#if logged_in}}
+<div class="row text-center">
+  <div class="col-auto">
+    <h2>Welcome, {{username}} to the Exercise HomePage</h2>
+  </div>
+</div>
+
+<div class="row mt-4">
+  <a class="col-md-4" href="/api/workouts/create-post">
+        <button class="btn btn-lg btn-primary " id="newexercise-btn" >Add New Exercise</button>
+      </a>
+
+{{#if exercise.length}}
+   <div class="col-md-6 exercise-list">
+    <h3>Today's Exercises:</h3>
+
+    {{#each exercise as |exercise|}}
+    <div class="row mb-2">
+      <div class="col-md-8">
+        <h4>{{exercise.title}}</h4>
+        <ul>
+          <li>Minutes Completed: {{exercise.minutes}}</li>
+          <li>Total Calories Burned: {(calculateCalories exercise.minutes exercise.calories_per_hour}}</li>
+        </ul> 
+        
+      </div>
+      <div class="col-md-4">
+        <button class="btn btn-sm btn-danger " data-id="{{exercise.id}}">DELETE</button>
+      </div>
+    </div>
+    {{/each}}
+  </div>
+  {{/if}}
+
+  <h5> Total Calories Burned Today: {{totalCalories exercises}}</h5>
+ 
+</div>
+
+<script src="./js/exercise.js"></script>
+{{/if}}
+

@@ -1,5 +1,6 @@
 const { Model, DataTypes } = require("sequelize");
 const sequelize = require("../config/connection");
+const dayjs = require('dayjs');
 
 class Nutrition extends Model {}
 
@@ -12,6 +13,10 @@ Nutrition.init(
 			autoIncrement: true,
 		},
 		food_name: {
+			type: DataTypes.STRING,
+			allowNull: false,
+		},
+		meal_name: {
 			type: DataTypes.STRING,
 			allowNull: false,
 		},
@@ -34,6 +39,11 @@ Nutrition.init(
 			type: DataTypes.DATE,
 			allowNull: false,
 			defaultValue: DataTypes.NOW,
+			get() {
+			  const date = this.getDataValue('meal_date');
+			  return dayjs(date).format('MM/DD/YYYY');
+			}
+		  
 		},
 	},
 	{

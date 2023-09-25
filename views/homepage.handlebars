@@ -1,40 +1,23 @@
+{{#if logged_in}}
+
 <div class="row">
   <div class="col-auto">
-    <h1>Welcome, {{user}}!</h1>
+    <h1>Welcome to Get Your Fit On!!</h1>
   </div>
 </div>
 
 <div>
-    <h2>What do you want to do?</h2>
-{{exercise.title}}
-
+   <a class="col-md-4" href="/api/login"><button class="btn btn-lg btn-primary " id="login-btn" >Log In</button></a>
 </div>
-    
-<!DOCTYPE html>
-<html lang="en">
 
 
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      {{#unless logged_in}}
-      <li class="nav-item">
-        <a class="nav-link" href="/login">Profile</a>
-      </li>
-      {{/unless}}
-      {{#if logged_in}}
-      <li class="nav-item">
-        <a class="nav-link" href="/profile">Profile</a>
-      </li>
-      <button type="button" class="btn btn-outline-secondary">Logout</button>
-      {{/if}}
 
-      <li class="nav-item">
-        <a class="nav-link" href="/login">Login</a>
-      </li>
-    </ul>
-  </div>
-</nav>
-<main>
-  {{{ body }}}
-</main>
-</body>
+<p> The most recent exercises used:
+  {{order}}
+</p>
+
+
+login button
+homepage: exercises last 5 /popular home routes
+
+if exercise .length each exercise calories per minute

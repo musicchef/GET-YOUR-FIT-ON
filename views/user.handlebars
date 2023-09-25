@@ -1,29 +1,38 @@
 <h2>{{ username }}'s Profile</h2>
 </section>
 <section class="profile-pic">
-    <img src="{{ user.profile_photo }}" alt="{{ user.username }}" class="profile-picture">
+    <img src="{{ profile_photo }}" alt="{{ username }}" class="profile-picture">
 </section>
 <section class="user-activities">
-    <h2>Exercises</h2>
+    <h2>Today's Exercises</h2>
     <ul>
-        {{#each exercise as |exercise index|}}
+        {{#each exercise as |exercise|}}
             <li>
                 {{ exercise.title }} for <span class="workoutMinutes">{{ exercise.minutes }}</span> minutes<br>
                 This exercise burns <span class="caloriesPerhour">{{ exercise.calories_per_hour }}</span> calories per hour.<br>
-                You burned <span class="caloriesBurned" data-exercise-index={{ index }}></span> calories!
+                You burned <span class="caloriesBurned"></span> calories!
             </li>
         {{/each}}
     </ul>
 </section>
 <section class="user-nutrition">
-    <h2>Nutrition</h2>
+    <h2>Today's Nutrition</h2>
     <ul>
-        {{#each nutrition as |nutrition index|}}
+        {{#each nutrition as |nutrition|}}
             <li>
                 <span class="servings">{{ nutrition.calorie_count_servings }}</span> serving(s) of {{ nutrition.food_name }}<br>
                 There are <span class="calsPerServing">{{ nutrition.calorie_count_per_serving }}</span> calories per serving.
-                You consumed <span class="caloriesConsumed" data-nutrition-index={{ index }}></span> calories.
+                You consumed <span class="caloriesConsumed"></span> calories.
             </li>
         {{/each}}
     </ul>
 </section>
+
+<div class="myExercises">
+    <button type="button" class="btn btn-primary" id="exerciseButton">My Exercises</button>
+</div>
+<div class="myNutrition">
+    <button type="button" class="btn btn-primary" id="nutritionButton">My Nutrition</button>
+</div>
+
+<script src="../public/js/userHandlebars.js"></script>

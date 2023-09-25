@@ -19,6 +19,7 @@ router.get('/', async (req, res) => {
   }
 });
 
+
 router.get('/login', (req, res) => {
   if (req.session.logged_in) {
     res.redirect('/user');
@@ -38,7 +39,7 @@ router.get('/nutrition', async (req, res) => {
       order: [['nutrition_date', 'DESC']], 
       limit: 5, 
   }); 
-     const nutrition = nutritioneData.map((nutrition) => nutrition.get({ plain: true }));
+     const nutrition = nutritionData.map((nutrition) => nutrition.get({ plain: true }));
      res.render('nutrition', { 
        nutrition, 
        logged_in: req.session.logged_in 
@@ -50,15 +51,19 @@ router.get('/nutrition', async (req, res) => {
   }
 });
 
+router.get('/signup', (req, res) => {
+  res.render('signup');
+});
+
 router.get('/', async (req, res) => {
   try {
-    const exerciseData = await Friend.findAll({
-      order: [['exercise_date', 'DESC']], 
+    const friendData = await Friend.findAll({
+      order: [['first_name', 'DESC']], 
       limit: 5, 
   }); 
-     const exercise = exerciseData.map((exercise) => exercise.get({ plain: true }));
-     res.render('homepage', { 
-       exercise, 
+     const friend = friendData.map((friend) => friend.get({ plain: true }));
+     res.render('friends', { 
+       friend, 
        logged_in: req.session.logged_in 
      });
     

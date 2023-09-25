@@ -41,4 +41,16 @@ document.addEventListener('DOMContentLoaded', function () {
       calculateCaloriesConsumed(nutrition);
     });
   });
+
+  const nutritionButton = document.getElementById('nutritionButton');
+const exerciseButton = document.getElementById('exerciseButton');
+
+ 
+nutritionButton.addEventListener('click', function () {
+    window.location.href = '/api/nutrition';
+});
+
+exerciseButton.addEventListener('click', function () {
+    window.location.href = '/api/exercise';
+});
   

@@ -1,5 +1,6 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
+const dayjs = require('dayjs');
 
 class Exercise extends Model {}
 
@@ -32,8 +33,12 @@ Exercise.init(
     },
     exercise_date: {
       type: DataTypes.DATE,
-			allowNull: false,
-			defaultValue: DataTypes.NOW,
+      allowNull: false,
+      defaultValue: DataTypes.NOW,
+      get() {
+        const date = this.getDataValue('exercise_date');
+        return dayjs(date).format('MM/DD/YYYY');
+      }
     }
   },
   {
