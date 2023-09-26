@@ -45,6 +45,21 @@ router.get ('/createworkout', (req, res)=> {
     return;
 })
 
+router.post('/createworkout', withAuth, async (req, res) => {
+  try {
+    const newExerciseData = await Exercise.create({
+      ...req.body,
+      user_id: req.session.user_id,
+    });
+
+    res.render('exercise', {
+      ...newExerciseData,
+      logged_in: req.session.logged_in
+  })
+  } catch (err) {
+    res.status(400).json(err);
+  }
+}); 
 
 router.get('/login', (req, res) => {
   if (req.session.logged_in) {
