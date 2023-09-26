@@ -1,19 +1,18 @@
 require('dotenv').config();
 
-const userInput = document.getElementById('foodItem').value.trim();
-
-async function searchNutritionHandler(input) {
-    
+const nutritionFormHandler = async (event) => {
+    event.preventDefault();
     console.log("Your button worked!")
+    const userInput = document.getElementById('foodItem').value.trim();
 
-    const fetchNutrition = await fetch(`https://api.nal.usda.gov/fdc/v1/foods/search?api_key=${process.env.NUTRITION_API_KEY}&query=${input}&pageSize=10`);
+    const fetchNutrition = await fetch(`https://api.nal.usda.gov/fdc/v1/foods/search?api_key=${process.env.NUTRITION_API_KEY}&query=${userInput}&pageSize=10`);
 
-    let data = await fetchNutrition.json()
+    let data = fetchNutrition.json()
     console.log(data);
 
     return data;
 };
 
 document
-.getElementById('nutritionSearch')
-.addEventListener('click', searchNutritionHandler(userInput));
+.getElementById('search-nutrition')
+.addEventListener('submit', nutritionFormHandler);
