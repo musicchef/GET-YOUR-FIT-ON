@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const { User } = require('../../models/');
 const cloudinary = require('cloudinary').v2;
+const withAuth = require('../../utils/auth');
 
 router.post('/signup', async (req, res) => {
     try {
@@ -59,29 +60,30 @@ router.post('/signup', async (req, res) => {
     }
   });
 
-  router.post('/upload', async (req, res) => {
+  router.post('/upload', withAuth, async (req, res) => {
     try {
-      const result = await cloudinary.uploader.upload(req.file.path);
-      
-      const imageUrl = result.secure_url;
-  
-      const userId = req.session.user_id;
-      const user = await User.findByPk(userId);
-  
-      if (user) {
-        // Update the database with the new user imageURL
-        user.profile_photo = imageUrl;
-        await user.save();
-  
-        res.status(200).json({ imageUrl });
-      } else {
-        res.status(404).json({ error: 'User not found' });
-      }
+        if (!req.files || Object.keys(req.files).length === 0) {
+            return res.status(400).json({ message: 'No files were uploaded.' });
+        }
+
+        const uploadedFile = req.files.profile_photo;
+        const result = await cloudinary.uploader.upload(uploadedFile.tempFilePath);
+
+        const userId = req.session.user_id;
+        const user = await User.findByPk(userId);
+
+        if (user) {
+            user.profile_photo = result.secure_url;
+            await user.save();
+        } else {
+            return res.status(404).json({ message: 'User not found.' });
+        }
+
+        res.status(200).json({ profile_photo: result.secure_url });
     } catch (error) {
-      console.error(error);
-      res.status(500).json({ error: 'Image upload failed' });
+        console.error(error);
+        res.status(500).json({ error: 'Image upload failed' });
     }
-  });
-  
+});
   
 module.exports = router;
