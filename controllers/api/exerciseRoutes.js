@@ -7,10 +7,10 @@ router.get('/', withAuth, async (req, res) => {
     try {
       console.log(req.session);
         const exerciseData = await Exercise.findAll( {
-            // where: {
-            //   user_id: req.session.user_id,
-            //   exercise_date : dayjs().format('MM/DD/YYYY')  
-            // }
+             where: {
+              user_id: req.session.user_id,
+           exercise_date : dayjs().format('MM/DD/YYYY')  
+             }
         });
         const exercises = exerciseData.map((exercises) => exercises.get({ plain: true }));
         console.log(exercises)
@@ -31,7 +31,7 @@ router.post('/create', withAuth, async (req, res) => {
         user_id: req.session.user_id,
       });
   
-      res.render('newexercise', {
+      res.render('exercise', {
         ...newExerciseData,
         logged_in: req.session.logged_in
     })
