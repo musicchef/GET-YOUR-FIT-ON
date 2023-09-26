@@ -5,7 +5,7 @@ const createExercise = async (event) => {
   const exerciseForm = document.getElementById('new-exercise-form')
   const exercise = document.querySelector('#categoriesselect1').value;
   const time= document.querySelector('#duration').value;
-  const caloriesphour= ''
+  let caloriesphour= ''
   if (exercise === 'Run') {
         caloriesphour= 808;
         return;

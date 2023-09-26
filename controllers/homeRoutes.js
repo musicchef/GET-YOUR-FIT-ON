@@ -40,6 +40,11 @@ router.get('/profile', withAuth, async (req, res) => {
   }
 })
 
+router.get ('/createworkout', (req, res)=> {
+     res.render('newexercise');
+    return;
+})
+
 
 router.get('/login', (req, res) => {
   if (req.session.logged_in) {

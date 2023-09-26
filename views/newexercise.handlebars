@@ -1,4 +1,4 @@
-{{#if logged_in}}
+{{!-- {{#if logged_in}} --}}
 <h2>Add your exercise</h2>
  <form class="form exercise-form" id="new-exercise-form" data-id="{{id}}">
       <div class="form-group">
@@ -26,7 +26,7 @@
       </div>
       <div class="form-group">
          <label for="duration">Duration </label>
-            <input class="input" type="text" placeholder="For how many minutes did you do this exercise?" id="duration">        
+            <input class="input" type="text" placeholder="How long?" id="duration">        
         </div>
       <div class="form-group">
         <button type="submit" class="btn btn-primary" >Add Exercise</button>
@@ -35,4 +35,4 @@
 
   <script src="./js/newexercise.js"></script>
 
-{{/if}}
+{{!-- {{/if}} --}}
