@@ -7,8 +7,11 @@ module.exports = {
     // format large numbers with commas
     return parseInt(amount).toLocaleString();
   },
-  calculateCalories: function(minutes, calories_per_hour) {
-    return (minutes / 60) * calories_per_hour;
+  calculateCalories: function(exercise) {
+    console.log(exercise, 11);
+    
+    //console.log(typeof exercise.calories_per_hour)
+    return (exercise.minutes / 60) * exercise.calories_per_hour;
   },
 
   totalCalories:function(exercises) {

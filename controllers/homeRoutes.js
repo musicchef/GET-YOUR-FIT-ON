@@ -41,14 +41,17 @@ router.get('/profile', withAuth, async (req, res) => {
 })
 
 router.get ('/createworkout', (req, res)=> {
-     res.render('newexercise');
-    return;
+     res.render('newexercise', {
+      logged_in: req.session.logged_in 
+     });
+   
 })
 
 router.post('/createworkout', withAuth, async (req, res) => {
   try {
     const newExerciseData = await Exercise.create({
-      ...req.body
+      ...req.body,
+      user_id: req.session.user_id
     });
 
     res.render('exercise', {
