@@ -14,7 +14,7 @@
 <section class="user-activities">
     <h2>Today's Exercises</h2>
     <ul>
-        {{#each exercise as |exercise|}}
+        {{#each exercises as |exercise|}}
             <li>
                 {{ exercise.title }} for <span class="workoutMinutes">{{ exercise.minutes }}</span> minutes<br>
                 This exercise burns <span class="caloriesPerhour">{{ exercise.calories_per_hour }}</span> calories per hour.<br>
