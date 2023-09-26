@@ -9,7 +9,7 @@ router.get('/', withAuth, async (req, res) => {
         const exerciseData = await Exercise.findAll( {
              where: {
               user_id: req.session.user_id,
-           exercise_date : dayjs().format('MM/DD/YYYY')  
+           exercise_date : dayjs().format('YYYY-MM-DD')  
              }
         });
         const exercises = exerciseData.map((exercises) => exercises.get({ plain: true }));
@@ -31,7 +31,7 @@ router.post('/create', withAuth, async (req, res) => {
         user_id: req.session.user_id,
       });
   
-      res.render('exercise', {
+      res.render('newexercise', {
         ...newExerciseData,
         logged_in: req.session.logged_in
     })
