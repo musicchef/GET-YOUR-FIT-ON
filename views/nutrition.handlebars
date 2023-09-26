@@ -1,1 +1,85 @@
-SHow what you've eaten for the day
+{{#if logged_in}}
+<div class="row text-center">
+  <div class="col-auto">
+    <h2>Welcome, {{username}} to the Nutrition HomePage</h2>
+  </div>
+</div>
+
+<div class="row mt-4">
+  <a class="col-md-4" href="/api/food/create">
+        <button class="btn btn-lg btn-primary " id="newMeal-btn" >Add New Food</button>
+      </a>
+
+{{#if nutrtion.length}}
+   <div class="col-md-6 exercise-list">
+    <h3>Today's Meals:</h3>
+
+    <h4> Breakfast </h4>
+    {{#each nutrition as |nutrition|}}
+    <div class="row mb-2">
+      <div class="col-md-8">
+        <h4>{{nutrition.food_name}}</h4>
+        <ul>
+          <li>Total Calories: </li>
+        </ul> 
+      </div>
+      <div class="col-md-4">
+        <button class="btn btn-sm btn-danger " data-id="{{exercise.id}}">DELETE</button>
+      </div>
+    </div>
+    {{/each}}
+
+    <h4> Lunch </h4>
+    {{#each nutrition as |nutrition|}}
+    <div class="row mb-2">
+      <div class="col-md-8">
+        <h4>{{nutrition.food_name}}</h4>
+        <ul>
+          <li>Total Calories: </li>
+        </ul> 
+      </div>
+      <div class="col-md-4">
+        <button class="btn btn-sm btn-danger " data-id="{{exercise.id}}">DELETE</button>
+      </div>
+    </div>
+    {{/each}}
+
+    <h4> Dinner </h4>
+    {{#each nutrition as |nutrition|}}
+    <div class="row mb-2">
+      <div class="col-md-8">
+        <h4>{{nutrition.food_name}}</h4>
+        <ul>
+          <li>Total Calories: </li>
+        </ul> 
+      </div>
+      <div class="col-md-4">
+        <button class="btn btn-sm btn-danger " data-id="{{exercise.id}}">DELETE</button>
+      </div>
+    </div>
+    {{/each}}
+
+    <h4> Snack </h4>
+    {{#each nutrition as |nutrition|}}
+    <div class="row mb-2">
+      <div class="col-md-8">
+        <h4>{{nutrition.food_name}}</h4>
+        <ul>
+          <li>Total Calories: </li>
+        </ul> 
+      </div>
+      <div class="col-md-4">
+        <button class="btn btn-sm btn-danger " data-id="{{exercise.id}}">DELETE</button>
+      </div>
+    </div>
+    {{/each}}
+  </div>
+  {{/if}}
+
+  <h3> Total Calories Eaten Today: {{totalCalories nutrition}}</h3>
+ 
+</div>
+
+<script src="./js/exercise.js"></script>
+{{/if}}
+
