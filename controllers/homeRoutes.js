@@ -48,8 +48,7 @@ router.get ('/createworkout', (req, res)=> {
 router.post('/createworkout', withAuth, async (req, res) => {
   try {
     const newExerciseData = await Exercise.create({
-      ...req.body,
-      user_id: req.session.user_id,
+      ...req.body
     });
 
     res.render('exercise', {
