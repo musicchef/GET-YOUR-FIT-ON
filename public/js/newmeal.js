@@ -2,7 +2,6 @@ const createMealButton = document.querySelector('.meal-form');
 
 const createMeal = async (event) => {
   event.preventDefault();
-  const mealForm = document.getElementById('#meal-choice-form')
   const meal = document.querySelector('#meal-name').value;
   const food =document.querySelector('#food-name').value
   const calPerServing= document.querySelector('#cal-per-serving').value
@@ -15,8 +14,9 @@ const createMeal = async (event) => {
         body: JSON.stringify({ 
           food_name: food, 
           meal_name: meal,
-          calorie_count_per_serving: calPerServing,calorie_count_servings: servings,
-          user_id: mealForm.dataset.id
+          calorie_count_per_serving: calPerServing,
+          calorie_count_servings: servings
+          
         }),
         headers: {
           'Content-Type': 'application/json',

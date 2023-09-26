@@ -5,16 +5,16 @@ const dayjs = require('dayjs');
 
 router.get('/', async (req, res) => {
     try {
-        const nutritionData = await User.findbyPK({
-            attributes: { exclude: ['password'] },
-            include: [{ model: Nutrtion,
+        const nutritionData = await Nutrition.findAll({
               where: {
-                meal_date : dayjs().format('MM/DD/YYYY')  
-              } }],
+                user_id: req.session.user_id,
+                meal_date : dayjs().format('YYYY-MM-DD')  
+              } 
         });
-        const nutrition = nutritionData.get({plain: true});
+        const nutrition = nutritionData.map((nutrition)=> nutrition.get({plain: true}));
         res.render('nutrition', {
-         ...nutrition, })
+         ...nutrition,
+        logged_in:req.session.logged_in })
         
     } catch (err) {
         res.status(500).json(err);
@@ -47,7 +47,10 @@ router.post('/create', withAuth, async (req, res) => {
         user_id: req.session.user_id,
       });
   
-      res.status(200).json(newfood);
+      res.render('nutrition', {
+        ...newfood,
+        user_id: req.session.user_id,
+      });
     } catch (err) {
       res.status(400).json(err);
     }

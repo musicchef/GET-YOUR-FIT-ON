@@ -36,19 +36,15 @@ Nutrition.init(
 			},
 		},
 		meal_date: {
-			type: DataTypes.DATE,
+			type: DataTypes.DATEONLY,
 			allowNull: false,
-			defaultValue: DataTypes.NOW,
-			get() {
-			  const date = this.getDataValue('meal_date');
-			  return dayjs(date).format('MM/DD/YYYY');
-			}
-		  
+			defaultValue: DataTypes.NOW, 
 		},
 	},
 	{
 		sequelize,
 		modelName: "nutrition",
+		freezeTableName: true,
 		timestamps: true,
 		underscored: true,
 	}
