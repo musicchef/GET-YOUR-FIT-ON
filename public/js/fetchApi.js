@@ -14,5 +14,5 @@ const nutritionFormHandler = async (event) => {
 };
 
 document
-.getElementById('search-nutrition')
+.querySelector('#search-nutrition')
 .addEventListener('submit', nutritionFormHandler);
