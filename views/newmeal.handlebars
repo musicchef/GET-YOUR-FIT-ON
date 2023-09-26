@@ -8,20 +8,31 @@
 
   <form class="meal-choice" id="meal-choice-form" data-id="{{id}}">
     <div class="form-group">
-    <label for="categories">Categories</label>
-        <select class="form-control" id="categoriesselect2">
+      <label for="categories">Which Meal is this?</label>
+        <select class="form-control" id="meal-name">
             <option>Breakfast</option>
             <option>Lunch</option>
             <option>Dinner</option>
             <option>Snacks</option>
         </select>
     </div>
-        <div class="form-group">
-            <input class="input" type="text" placeholder="Meal name" id="meal-name">
-            <input class="input" type="text" placeholder="How many servings?" id="servings">
-        </div>
+    <div class="form-group">
+      <label for="food-name">What is the food?</label> 
+      <input class="input" type="text" placeholder="Food Name" id="food-name">
     </div>
+    <div class="form-group">
+      <label for="calories_count_per_serving">How many calories per serving?</label> 
+      <input class="input" type="text" placeholder="Calories Per Serving" id="cal-per-serving">
+    </div>
+    <div class="form-group">
+      <label for="calorie_count_servings">How many servings did you eat?</label> 
+      <input class="input" type="text" placeholder="Servings eaten" id="servings">
+    </div>
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary" >Add Food</button>
+      </div>
   </form>
+</div>
 
-
-  Add show
+ <script src="./js/newmeal.js"></script>
+{{/if}}

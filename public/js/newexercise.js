@@ -66,7 +66,7 @@ const createExercise = async (event) => {
   };
   if (exercise&&time ) {
     try {
-    const response = await fetch('/api/workouts', {
+    const response = await fetch('/api/workouts/create', {
         method: 'POST',
         body: JSON.stringify({ 
           title: exercise, 

@@ -6,21 +6,21 @@
 </div>
 
 <div class="row mt-4">
-  <a class="col-md-4" href="/api/workouts/create-post">
+  <a class="col-md-4" href="/api/workouts/create">
         <button class="btn btn-lg btn-primary " id="newexercise-btn" >Add New Exercise</button>
       </a>
 
-{{#if exercise.length}}
+{{#if exercises.length}}
    <div class="col-md-6 exercise-list">
     <h3>Today's Exercises:</h3>
 
-    {{#each exercise as |exercise|}}
+    {{#each exercises as |exercise|}}
     <div class="row mb-2">
       <div class="col-md-8">
         <h4>{{exercise.title}}</h4>
         <ul>
           <li>Minutes Completed: {{exercise.minutes}}</li>
-          <li>Total Calories Burned: {{calculateCalories exercise.minutes exercise.calories_per_hour}}</li>
+         <li>Total Calories Burned: {{calculateCalories}}</li>
         </ul> 
         
       </div>
@@ -32,10 +32,10 @@
   </div>
   {{/if}}
 
-  <h5> Total Calories Burned Today: {{totalCalories exercises}}</h5>
- 
+  <h3> Total Calories Burned Today: {{totalCalories exercises}}</h3>
 </div>
 
 <script src="./js/exercise.js"></script>
+
 {{/if}}
 

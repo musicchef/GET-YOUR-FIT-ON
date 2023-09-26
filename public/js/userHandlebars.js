@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', function () {
     nutritionItems.forEach(function (nutrition) {
       calculateCaloriesConsumed(nutrition);
     });
-  });
+   });
 
 const nutritionButton = document.getElementById('nutritionButton');
 const exerciseButton = document.getElementById('exerciseButton');

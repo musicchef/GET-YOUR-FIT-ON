@@ -40,7 +40,7 @@ router.get('/nutrition', async (req, res) => {
 });
 
 
-router.post('/', withAuth, async (req, res) => {
+router.post('/create', withAuth, async (req, res) => {
     try {
       const newfood = await Nutrition.create({
         ...req.body,
