@@ -1,8 +1,3 @@
-
-Handlebars.registerHelper('calculateCalories', function(minutes, calories_per_hour) {
-    return (minutes / 60) * calories_per_hour;});
-
-
 const delButtonHandler = async (event) => {
     if (event.target.hasAttribute('data-id')) {
         const id = event.target.getAttribute('data-id');
@@ -23,13 +18,3 @@ const delButtonHandler = async (event) => {
         .querySelector('.exercise-list')
         .addEventListener('click', delButtonHandler)
 
-
-Handlebars.registerHelper('totalCalories', function(exercises) {
-    var total = 0;
-      
-    exercises.forEach(function(exercise) {
-        total += Handlebars.helpers.calculateCalories(exercise.minutes, exercise.calories_perhour);
-    });
-      
-        return total;
-    });

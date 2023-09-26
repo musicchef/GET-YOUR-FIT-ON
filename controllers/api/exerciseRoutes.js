@@ -5,20 +5,21 @@ const dayjs = require('dayjs');
 
 router.get('/', withAuth, async (req, res) => {
     try {
-        const exerciseData = await User.findByPk({
-            attributes: { exclude: ['password'] },
-            include: [{ model: Exercise,
-            where: {
-              exercise_date : dayjs().format('MM/DD/YYYY')  
-            } }],
-
+      console.log(req.session);
+        const exerciseData = await Exercise.findAll( {
+            // where: {
+            //   user_id: req.session.user_id,
+            //   exercise_date : dayjs().format('MM/DD/YYYY')  
+            // }
         });
-        const exercise = exerciseData.get({ plain: true });
+        const exercises = exerciseData.map((exercises) => exercises.get({ plain: true }));
+        console.log(exercises)
         res.render('exercise', {
-            ...exercise,
+            exercises,
             logged_in: req.session.logged_in
         })
         } catch (err) {
+          console.log('err: ', err)
         res.status(500).json(err);
     }
 });
