@@ -72,7 +72,7 @@ profilePhotoInput.addEventListener('change', async function () {
             formData.append('profile_photo', file);
 
             // Send a POST request to the server to upload the profile photo
-            const response = await fetch('/api/upload', {
+            const response = await fetch('/api/user/upload', {
                 method: 'POST',
                 body: formData,
             });
