@@ -3,6 +3,14 @@
 <section class="profile-pic">
     <img src="{{ profile_photo }}" alt="{{ username }}" class="profile-picture">
 </section>
+<section class="profile-upload">
+    <h2>Upload Profile Photo</h2>
+    <form id="profilePhotoForm" enctype="multipart/form-data">
+    {{!-- enctype set to multipart/form-data is necessary for encoding a file upload to process binary data to a server and or cloud--}}
+        <input type="file" id="profilePhotoInput" accept="image/*" name="profile_photo" />
+        <button type="submit">Upload</button>
+    </form>
+</section>
 <section class="user-activities">
     <h2>Today's Exercises</h2>
     <ul>
