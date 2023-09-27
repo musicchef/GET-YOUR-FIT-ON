@@ -36,7 +36,7 @@ function getSearchResults () {
             card.classList.add('w-25', 'mx-3', 'my-3', 'bg-light');
             title.innerHTML = element.description;
             card.append(title);
-            calories.innerHTML = `${element.foodNutrients[3].value} calories`;
+            calories.innerHTML = `${element.foodNutrients[3].value}`;
             card.append(calories)
             addFood.innerHTML = 'Add to My Food List'
             addFood.setAttribute('id',`uniqueID${counter}`)
@@ -50,15 +50,20 @@ function getSearchResults () {
             document
             .querySelector(`#uniqueID${i}`)
             .addEventListener('click', async (event) => {
-                console.log(event.target.previousElementSibling.previousElementSibling.innerHTML)
+                console.log(Number(event.target.previousElementSibling.innerHTML))
                 try {
-                    const response = await fetch('api/nutrition/{route}', {
+                    const response = await fetch('api/food/explore', {
                         method: 'POST',
                         body: JSON.stringify({
-                            food_name: event.target.previousElementSibling.previousElementSibling.innerHTML,
-                            calorie_count_per_servings: event.target.previousElementSibling.innerHTML
+                            food_name: String(event.target.previousElementSibling.previousElementSibling.innerHTML),
+                            meal_name: 'Lunch',
+                            calorie_count_per_servings: parseInt(event.target.previousElementSibling.innerHTML),
+                            calorie_count_servings: 1
                         })
                     })
+                    if(response.ok) {
+                        alert("Added to today's meals!")
+                    }
                 } catch (err) {
                     console.log(err)
                 }

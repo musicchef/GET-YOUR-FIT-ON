@@ -154,5 +154,22 @@ router.get('/', async (req, res) => {
   }
 });
 
+router.post('/explore', withAuth, async (req, res) => {
+  try {
+    console.log("You got this far...")
+    const newfood = await Nutrition.create({
+      body: req.body,
+      user_id: req.session.user_id,
+    });
+
+    res.render('nutrition', {
+      ...newfood,
+      user_id: req.session.user_id,
+    });
+  } catch (err) {
+    res.status(400).json(err);
+  }
+})
+
 
 module.exports = router;
