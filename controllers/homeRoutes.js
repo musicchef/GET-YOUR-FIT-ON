@@ -1,5 +1,5 @@
 const router = require('express').Router();
-
+const dayjs = require('dayjs');
 const { User, Exercise}= require('../models');
 const withAuth = require ('../utils/auth');
 
@@ -28,6 +28,9 @@ router.get('/profile', withAuth, async (req, res) => {
     const userData = await User.findByPk(req.session.user_id, {
       attributes: {exclude: ['password']},
       include: [{ all:true, nested:true }],
+      where:
+      {exercise_date : dayjs().format('YYYY-MM-DD'),
+      meal_date: dayjs().format('YYYY-MM-DD')}
       
   });
    
