@@ -2,7 +2,6 @@ let root = document.getElementById('root')
 
 async function nutritionFormHandler(input) {
     event.preventDefault();
-    console.log("Your button worked!")
     const data = await fetch(`https://api.nal.usda.gov/fdc/v1/foods/search?api_key=4xf4bbqjoGLfyf31OWdx7G3tGya1IgsrvJfScbhT&query=${input}`);
     return data.json();
 };
@@ -20,10 +19,12 @@ function getSearchResults () {
         for(let i = 0; i < result.foods.length; i++) {
             foodsArray.push(result.foods[i]);
         }
-        console.log(foodsArray);
 
         let counter = 0;
         foodsArray.forEach(element => {
+            if(element.foodNutrients.length == 0){
+                return
+            }
             if(element.foodNutrients[3].value == 0){
                 return;
             }
@@ -45,14 +46,25 @@ function getSearchResults () {
 
             counter++;
         });
+        for(let i = 0; i < foodsArray.length; i++) {
+            document
+            .querySelector(`#uniqueID${i}`)
+            .addEventListener('click', async (event) => {
+                console.log(event.target.previousElementSibling.previousElementSibling.innerHTML)
+                try {
+                    const response = await fetch('api/nutrition/{route}', {
+                        method: 'POST',
+                        body: JSON.stringify({
+                            food_name: event.target.previousElementSibling.previousElementSibling.innerHTML,
+                            calorie_count_per_servings: event.target.previousElementSibling.innerHTML
+                        })
+                    })
+                } catch (err) {
+                    console.log(err)
+                }
+            })
+        }
     })
-    for(let i = 0; i < foodsArray.length; i++) {
-        document
-        .querySelector(`#uniqueID${i}`)
-        .addEventListener('click', (event) => {
-            console.log(this.calories)
-        })
-    }
 };
 
 document
