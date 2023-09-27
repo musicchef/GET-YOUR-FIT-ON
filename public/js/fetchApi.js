@@ -50,16 +50,20 @@ function getSearchResults () {
             document
             .querySelector(`#uniqueID${i}`)
             .addEventListener('click', async (event) => {
-                console.log(Number(event.target.previousElementSibling.innerHTML))
+                console.log(Number(event.target.previousElementSibling.innerHTML));
+                const calories = event.target.previousElementSibling.innerHTML
                 try {
                     const response = await fetch('api/food/explore', {
                         method: 'POST',
                         body: JSON.stringify({
-                            food_name: String(event.target.previousElementSibling.previousElementSibling.innerHTML),
+                            food_name: `${String(event.target.previousElementSibling.previousElementSibling.innerHTML)}`,
                             meal_name: 'Lunch',
                             calorie_count_per_servings: parseInt(event.target.previousElementSibling.innerHTML),
                             calorie_count_servings: 1
-                        })
+                        }),
+                        headers: {
+                            'Content-Type': 'application/json',
+                          },
                     })
                     if(response.ok) {
                         alert("Added to today's meals!")
