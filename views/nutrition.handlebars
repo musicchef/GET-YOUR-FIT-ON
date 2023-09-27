@@ -13,72 +13,23 @@
    <div class="col-md-6 exercise-list">
     <h3>Today's Meals:</h3>
 
-    <h4> Breakfast </h4>
-    {{#each nutrition as |nutrition|}}
-    <div class="row mb-2">
-      <div class="col-md-8">
-        <h4>{{nutrition.food_name}}</h4>
-        <ul>
-          <li>Total Calories: </li>
-        </ul> 
-      </div>
-      <div class="col-md-4">
-        <button class="btn btn-sm btn-danger " data-id="{{exercise.id}}">DELETE</button>
-      </div>
-    </div>
-    {{/each}}
+    <h4 id="breakfast"> Breakfast </h4>
+    
 
-    <h4> Lunch </h4>
-    {{#each nutrition as |nutrition|}}
-    <div class="row mb-2">
-      <div class="col-md-8">
-        <h4>{{nutrition.food_name}}</h4>
-        <ul>
-          <li>Total Calories: </li>
-        </ul> 
-      </div>
-      <div class="col-md-4">
-        <button class="btn btn-sm btn-danger " data-id="{{exercise.id}}">DELETE</button>
-      </div>
-    </div>
-    {{/each}}
+    <h4 id="lunch"> Lunch </h4>
+    
 
-    <h4> Dinner </h4>
-    {{#each nutrition as |nutrition|}}
-    <div class="row mb-2">
-      <div class="col-md-8">
-        <h4>{{nutrition.food_name}}</h4>
-        <ul>
-          <li>Total Calories: </li>
-        </ul> 
-      </div>
-      <div class="col-md-4">
-        <button class="btn btn-sm btn-danger " data-id="{{exercise.id}}">DELETE</button>
-      </div>
-    </div>
-    {{/each}}
+    <h4 id="dinner"> Dinner </h4>
 
-    <h4> Snack </h4>
-    {{#each nutrition as |nutrition|}}
-    <div class="row mb-2">
-      <div class="col-md-8">
-        <h4>{{nutrition.food_name}}</h4>
-        <ul>
-          <li>Total Calories: </li>
-        </ul> 
-      </div>
-      <div class="col-md-4">
-        <button class="btn btn-sm btn-danger " data-id="{{exercise.id}}">DELETE</button>
-      </div>
-    </div>
-    {{/each}}
+
+    <h4 id="snack"> Snack </h4>
+    
   </div>
  {{/if}}
 
   <h3> Total Calories Eaten Today: </h3>
  
 </div>
-
-<script src="./js/exercise.js"></script>
+<script src="/js/nutrition.js"></script>
 {{/if}}
 
