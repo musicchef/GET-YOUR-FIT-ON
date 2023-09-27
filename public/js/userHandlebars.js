@@ -75,7 +75,8 @@ uploadForm.addEventListener('submit', async function (event) {
         });
 
         if (response.ok) {
-            alert('Photo uploaded!')
+            const data = await response.json();
+            console.log(data);
 
         } else {
             console.error('Profile photo upload failed.');
