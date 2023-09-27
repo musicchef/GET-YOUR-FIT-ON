@@ -65,6 +65,7 @@ uploadForm.addEventListener('submit', async function (event) {
     event.preventDefault();
 
     const formData = new FormData();
+    console.log(profilePhotoInput.files[0]);
     formData.append('profile_photo', profilePhotoInput.files[0]);
 
     try {
