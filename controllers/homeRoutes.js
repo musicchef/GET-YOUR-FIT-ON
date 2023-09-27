@@ -29,7 +29,8 @@ router.get('/profile', withAuth, async (req, res) => {
       attributes: {exclude: ['password']},
       include: [{ all:true, nested:true }],
       where:
-      {exercise_date : dayjs().format('YYYY-MM-DD'),
+      {exercise_date : dayjs().format('YYYY-MM-DD')},
+      where: {
       meal_date: dayjs().format('YYYY-MM-DD')}
       
   });
