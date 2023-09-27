@@ -1,11 +1,11 @@
 
 
 const mealSetup = async () => {
-    const response = await fetch (`/api/food`, {
+    const response = await fetch ('/api/food', {
          method: 'GET',
         })
         const data =await response.json();
-        const nutrition = data.map((nutrition)=> nutrition.get({plain: true}));
+       
 
         const breakfast = data.filter((meal)=> meal.meal_name==="Breakfast")
         const lunch = data.filter((meal)=> meal.meal_name==="Lunch")
@@ -14,9 +14,9 @@ const mealSetup = async () => {
         const bf= document.getElementById('breakfast')
         const lu=document.getElementById('lunch');
         const di= document.getElementById('dinner');
-        const sn= document.getElementById('snack')
+        const sn= document.getElementById('snack');
 
-        breakfast.forEach(element=> {
+        breakfast.forEach((element)=> {
             let card = document.createElement('div');
             let div= document.createElement('div');
             let header= document.createElement ('h4');
@@ -29,10 +29,10 @@ const mealSetup = async () => {
             div.classList.add('col-md-8');
             divbutton.classList.add('col-md-4');
             button.classList.add('btn', 'btn-sm', 'btn-danger');
-            button.addAttribute("data-id","nutrition.id");
-            header.innerHTML = nutrition.food_name
-            totalCalories.innerHTML = nutrition.calorie_count_per_serving * nutrition.calorie_count_servings;
-            button.innerHTML= Delete;
+            button.setAttribute("data-id",element.id);
+            header.innerHTML = element.food_name
+            totalCalories.innerHTML = element.calorie_count_per_serving * element.calorie_count_servings;
+            button.innerHTML= "Delete";
 
             bf.append(card);
             card.append(div);
@@ -56,10 +56,10 @@ const mealSetup = async () => {
             div.classList.add('col-md-8');
             divbutton.classList.add('col-md-4');
             button.classList.add('btn', 'btn-sm', 'btn-danger');
-            button.addAttribute("data-id","nutrition.id");
-            header.innerHTML = nutrition.food_name
-            totalCalories.innerHTML = nutrition.calorie_count_per_serving * nutrition.calorie_count_servings;
-            button.innerHTML= Delete;
+            button.addAttribute("data-id","element.id");
+            header.innerHTML = element.food_name
+            totalCalories.innerHTML = element.calorie_count_per_serving * element.calorie_count_servings;
+            button.innerHTML= "Delete";
 
             lu.append(card);
             card.append(div);
@@ -83,10 +83,10 @@ const mealSetup = async () => {
             div.classList.add('col-md-8');
             divbutton.classList.add('col-md-4');
             button.classList.add('btn', 'btn-sm', 'btn-danger');
-            button.addAttribute("data-id","nutrition.id");
-            header.innerHTML = nutrition.food_name
-            totalCalories.innerHTML = nutrition.calorie_count_per_serving * nutrition.calorie_count_servings;
-            button.innerHTML= Delete;
+            button.addAttribute("data-id","element.id");
+            header.innerHTML = element.food_name
+            totalCalories.innerHTML = element.calorie_count_per_serving * element.calorie_count_servings;
+            button.innerHTML= "Delete";
 
             di.append(card);
             card.append(div);
@@ -110,10 +110,10 @@ const mealSetup = async () => {
             div.classList.add('col-md-8');
             divbutton.classList.add('col-md-4');
             button.classList.add('btn', 'btn-sm', 'btn-danger');
-            button.addAttribute("data-id","nutrition.id");
-            header.innerHTML = nutrition.food_name
-            totalCalories.innerHTML = nutrition.calorie_count_per_serving * nutrition.calorie_count_servings;
-            button.innerHTML= Delete;
+            button.addAttribute("data-id","element.id");
+            header.innerHTML = element.food_name
+            totalCalories.innerHTML = element.calorie_count_per_serving * element.calorie_count_servings;
+            button.innerHTML= "Delete";
 
             sn.append(card);
             card.append(div);
@@ -134,12 +134,12 @@ const mealSetup = async () => {
 //     if (event.target.hasAttribute('data-id')) {
 //         const id = event.target.getAttribute('data-id');
       
-//         const response = await fetch(`/api/food${id}`, {
+//         const response = await fetch(`/api/food/${id}`, {
 //             method: 'DELETE',
 //         });
       
 //     if (response.ok) {
-//         document.location.replace('/dashboard');
+//         document.location.reload();
 //     } else {
 //         alert('Failed to delete project');
 //     }

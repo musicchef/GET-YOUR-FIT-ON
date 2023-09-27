@@ -21,24 +21,6 @@ router.get('/', withAuth, async (req, res) => {
     }
 });
 
-router.get('/nutrition', async (req, res) => {
-  try {
-    const nutritionData = await Nutrition.findAll({
-      order: [['nutrition_date', 'DESC']], 
-      limit: 5, 
-  }); 
-     const nutrition = nutritionData.map((nutrition) => nutrition.get({ plain: true }));
-     res.render('nutrition', { 
-       nutrition, 
-       logged_in: req.session.logged_in 
-     });
-    
-  } catch (err) {
-    console.error(err);
-    res.status(500).json({ error: 'Internal Server Error' });
-  }
-});
-
 
 router.post('/create', withAuth, async (req, res) => {
     try {
