@@ -1,6 +1,6 @@
 const { Model, DataTypes } = require("sequelize");
 const sequelize = require("../config/connection");
-const dayjs = require('dayjs');
+
 
 class Nutrition extends Model {}
 

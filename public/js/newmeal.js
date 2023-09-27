@@ -1,4 +1,4 @@
-const createMealButton = document.querySelector('.meal-form');
+const createMealButton = document.querySelector('.meal-choice');
 
 const createMeal = async (event) => {
   event.preventDefault();

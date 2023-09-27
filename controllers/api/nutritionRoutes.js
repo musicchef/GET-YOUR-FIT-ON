@@ -3,7 +3,7 @@ const { User, Nutrition, Exercise, Friend } = require('../../models/');
 const withAuth = require('../../utils/auth');
 const dayjs = require('dayjs');
 
-router.get('/', async (req, res) => {
+router.get('/', withAuth, async (req, res) => {
     try {
         const nutritionData = await Nutrition.findAll({
               where: {
@@ -13,8 +13,8 @@ router.get('/', async (req, res) => {
         });
         const nutrition = nutritionData.map((nutrition)=> nutrition.get({plain: true}));
         res.render('nutrition', {
-         ...nutrition,
-        logged_in:req.session.logged_in })
+         nutrition,
+        logged_in: req.session.logged_in })
         
     } catch (err) {
         res.status(500).json(err);
@@ -47,9 +47,9 @@ router.post('/create', withAuth, async (req, res) => {
         user_id: req.session.user_id,
       });
   
-      res.render('nutrition', {
+      res.render('newmeal', {
         ...newfood,
-        user_id: req.session.user_id,
+        logged_in: req.session.logged_in
       });
     } catch (err) {
       res.status(400).json(err);

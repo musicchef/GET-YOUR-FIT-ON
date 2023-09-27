@@ -9,7 +9,7 @@ router.get('/', withAuth, async (req, res) => {
         const exerciseData = await Exercise.findAll( {
              where: {
               user_id: req.session.user_id,
-           exercise_date : dayjs().format('YYYY-MM-DD')  
+              exercise_date : dayjs().format('YYYY-MM-DD')  
              }
         });
         const exercises = exerciseData.map((exercises) => exercises.get({ plain: true }));
