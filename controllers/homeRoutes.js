@@ -71,7 +71,9 @@ router.get('/signup', (req, res) => {
 });
 
 router.get('/explore', (req, res) => {
-  res.render('nutritionFetch');
+  res.render('nutritionFetch', {
+    logged_in: req.session.logged_in 
+  });
 })
 
 router.get('/*', (req, res) => {

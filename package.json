@@ -12,7 +12,7 @@
   "license": "ISC",
   "dependencies": {
     "bcrypt": "^5.1.1",
-    "cloudinary": "^1.40.0",
+    "cloudinary": "^1.41.0",
     "connect-session-sequelize": "^7.0.4",
     "dayjs": "^1.11.10",
     "dotenv": "^8.2.0",

@@ -1,3 +1,4 @@
+{{#if logged_in}}
 <form id="search-nutrition" class=" mt-5 w-50 container ">
     <div class="form-group">
         <label for="search">Lookup Food</label>
@@ -14,4 +15,7 @@
     <button class="w-25 btn my-2 my-sm-0" type="submit">Search Exercises</button>
 </form>
 
+<div id="root" class="flex-row container justify-content-center"></div>
+
 <script src="/js/fetchApi.js"></script>
+{{/if}}
