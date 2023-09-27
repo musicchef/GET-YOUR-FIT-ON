@@ -58,36 +58,29 @@ friendsButton.addEventListener('click', function () {
     window.location.href = '/api/friends';
 });
 
-// Handle profile photo upload
+const uploadForm = document.getElementById('uploadForm');
 const profilePhotoInput = document.getElementById('profilePhotoInput');
-const profilePhotoPreview = document.getElementById('profilePhotoPreview');
 
-profilePhotoInput.addEventListener('change', async function () {
-    const file = profilePhotoInput.files[0];
+uploadForm.addEventListener('submit', async function (event) {
+    event.preventDefault();
 
-    if (file) {
-        try {
-            // Create a FormData object to send the file to the server
-            const formData = new FormData();
-            formData.append('profile_photo', file);
+    const formData = new FormData();
+    formData.append('profile_photo', profilePhotoInput.files[0]);
 
-            // Send a POST request to the server to upload the profile photo
-            const response = await fetch('/api/user/upload', {
-                method: 'POST',
-                body: formData,
-            });
+    try {
+        const response = await fetch('/api/user/upload', {
+            method: 'POST',
+            body: formData,
+        });
 
-            if (response.ok) {
-                const data = await response.json();
-                const imageUrl = data.imageUrl;
+        if (response.ok) {
+            const data = await response.json();
+            const profilePhotoUrl = data.profile_photo;
 
-                // Update the profile photo preview with the uploaded image
-                profilePhotoPreview.src = imageUrl;
-            } else {
-                console.error('Profile photo upload failed.');
-            }
-        } catch (error) {
-            console.error('Error uploading profile photo:', error);
+        } else {
+            console.error('Profile photo upload failed.');
         }
+    } catch (error) {
+        console.error('Error uploading profile photo:', error);
     }
 });
