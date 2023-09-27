@@ -75,7 +75,6 @@ uploadForm.addEventListener('submit', async function (event) {
 
         if (response.ok) {
             const data = await response.json();
-            const profilePhotoUrl = data.profile_photo;
 
         } else {
             console.error('Profile photo upload failed.');

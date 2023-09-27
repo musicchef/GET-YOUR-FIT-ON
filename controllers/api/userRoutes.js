@@ -68,7 +68,7 @@ router.post('/signup', async (req, res) => {
       }
   
       // Upload the file to Cloudinary
-      const result = await cloudinary.uploader.upload(req.file.buffer);
+      const result = await cloudinary.uploader.upload(req.file.path);
   
       const userId = req.session.user_id;
       const user = await User.findByPk(userId);
@@ -86,5 +86,6 @@ router.post('/signup', async (req, res) => {
     }
   });
   
+  // I think it might not be working because it requires more code in server.js but this is driving me crazy!!!!!!!
   
 module.exports = router;
