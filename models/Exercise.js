@@ -35,7 +35,10 @@ Exercise.init(
       type: DataTypes.DATEONLY,
       allowNull: false,
       defaultValue: DataTypes.NOW,
-    
+      get() {
+			  const date = this.getDataValue('exercise_date');
+			  return dayjs(date).format('MM/DD/YYYY');
+			}
     }
   },
   {
