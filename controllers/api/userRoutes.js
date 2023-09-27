@@ -65,6 +65,7 @@ router.post('/signup', async (req, res) => {
     try {
       if (!req.file) {
         return res.status(400).json({ message: 'No file uploaded.' });
+        console.log(profilePhotoInput.file[0]);
       }
   
       // Upload the file to Cloudinary

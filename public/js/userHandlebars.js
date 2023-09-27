@@ -65,6 +65,7 @@ uploadForm.addEventListener('submit', async function (event) {
     event.preventDefault();
 
     const formData = new FormData();
+    console.log(profilePhotoInput.files[0]);
     formData.append('profile_photo', profilePhotoInput.files[0]);
 
     try {
@@ -75,6 +76,7 @@ uploadForm.addEventListener('submit', async function (event) {
 
         if (response.ok) {
             const data = await response.json();
+            console.log(data);
 
         } else {
             console.error('Profile photo upload failed.');
