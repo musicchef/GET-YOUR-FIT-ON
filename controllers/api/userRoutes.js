@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const { User } = require('../../models/');
-const cloudinary = require('cloudinary').v2;
+const cloudinary = require('../../utils/cloudinary');
+const upload = require('../../middleware/multer');
 const withAuth = require('../../utils/auth');
 
 router.post('/signup', async (req, res) => {
@@ -60,30 +61,31 @@ router.post('/signup', async (req, res) => {
     }
   });
 
-  router.post('/upload', withAuth, async (req, res) => {
+  router.post('/upload', withAuth, upload.single('profile_photo'), async (req, res) => {
     try {
-        if (!req.files || Object.keys(req.files).length === 0) {
-            return res.status(400).json({ message: 'No files were uploaded.' });
-        }
-
-        const uploadedFile = req.files.profile_photo;
-        const result = await cloudinary.uploader.upload(uploadedFile.tempFilePath);
-
-        const userId = req.session.user_id;
-        const user = await User.findByPk(userId);
-
-        if (user) {
-            user.profile_photo = result.secure_url;
-            await user.save();
-        } else {
-            return res.status(404).json({ message: 'User not found.' });
-        }
-
+      if (!req.file) {
+        return res.status(400).json({ message: 'No file uploaded.' });
+      }
+  
+      // Upload the file to Cloudinary
+      const result = await cloudinary.uploader.upload(req.file.path);
+  
+      const userId = req.session.user_id;
+      const user = await User.findByPk(userId);
+  
+      if (user) {
+        user.profile_photo = result.secure_url;
+        await user.save();
         res.status(200).json({ profile_photo: result.secure_url });
+      } else {
+        return res.status(404).json({ message: 'User not found.' });
+      }
     } catch (error) {
-        console.error(error);
-        res.status(500).json({ error: 'Image upload failed' });
+      console.error(error);
+      res.status(500).json({ error: 'Image upload failed' });
     }
-});
+  });
+  
+  // I think it might not be working because it requires more code in server.js but this is driving me crazy!!!!!!!
   
 module.exports = router;

@@ -4,7 +4,7 @@ const session = require('express-session');
 const exphbs = require('express-handlebars');
 const routes = require('./controllers');
 const helpers = require('./utils/helpers');
-const { v2: cloudinary } = require('cloudinary');
+
 
 require('dotenv').config();
 
@@ -15,16 +15,6 @@ const app = express();
 const PORT = process.env.PORT || 3001;
 
 const hbs = exphbs.create({helpers});
-
-
-
-
-
-cloudinary.config({
-    cloud_name: 'your_cloud_name',
-    api_key: 'your_api_key',
-    api_secret: 'your_api_secret',
-  });
 
 const sess = {
     secret: process.env.SESSION_SECRET,
