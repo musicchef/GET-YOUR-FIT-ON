@@ -9,9 +9,9 @@ module.exports = {
   },
   calculateCalories: function(exercise) {
     console.log(exercise, 11);
-    
+    const caloriesBurned=  (exercise.minutes / 60) * exercise.calories_per_hour
     //console.log(typeof exercise.calories_per_hour)
-    return (exercise.minutes / 60) * exercise.calories_per_hour;
+    return caloriesBurned.toFixed(2);
   },
 
   totalCalories:function(exercises) {
@@ -21,6 +21,6 @@ module.exports = {
         total += (exercise.minutes / 60) * exercise.calories_per_hour
     });
       
-    return total;
+    return total.toFixed(2);
   }
 }

@@ -1,5 +1,5 @@
 const router = require('express').Router();
-
+const dayjs = require('dayjs');
 const { User, Exercise}= require('../models');
 const withAuth = require ('../utils/auth');
 
@@ -28,6 +28,9 @@ router.get('/profile', withAuth, async (req, res) => {
     const userData = await User.findByPk(req.session.user_id, {
       attributes: {exclude: ['password']},
       include: [{ all:true, nested:true }],
+      where:
+      {exercise_date : dayjs().format('YYYY-MM-DD'),
+      meal_date: dayjs().format('YYYY-MM-DD')}
       
   });
    
@@ -48,22 +51,11 @@ router.get ('/createworkout', (req, res)=> {
    
 })
 
-router.post('/createworkout', withAuth, async (req, res) => {
-  try {
-    const newExerciseData = await Exercise.create({
-      ...req.body,
-      user_id: req.session.user_id
-    });
-
-    res.render('exercise', {
-      ...newExerciseData,
-      logged_in: req.session.logged_in
-  })
-  } catch (err) {
-    res.status(400).json(err);
-  }
-}); 
-
+router.get ('/createfood', (req, res) => {
+  res.render('newmeal', {
+    logged_in: req.session.logged_in 
+   });
+})
 router.get('/login', (req, res) => {
   if (req.session.logged_in) {
     res.redirect('/profile');

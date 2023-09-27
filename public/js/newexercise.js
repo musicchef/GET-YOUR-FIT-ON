@@ -2,7 +2,6 @@ const createExerciseButton = document.querySelector('#new-exercise-form');
 
 const createExercise = async (event) => {
   event.preventDefault();
-  const exerciseForm = document.getElementById('new-exercise-form')
   const exercise = document.querySelector('#categoriesselect1').value;
   const time= document.querySelector('#duration').value;
   let caloriesphour= ''
