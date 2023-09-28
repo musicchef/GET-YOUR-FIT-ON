@@ -9,7 +9,7 @@ const mealSetup = async () => {
         const breakfast = data.filter((meal)=> meal.meal_name==="Breakfast")
         const lunch = data.filter((meal)=> meal.meal_name==="Lunch")
         const dinner = data.filter((meal)=> meal.meal_name==="Dinner");
-        const snack = data.filter((meal)=> meal.meal_name==="Snack");
+        const snack = data.filter((meal)=> meal.meal_name==="Snacks");
         const bf= document.getElementById('breakfast')
         const lu=document.getElementById('lunch');
         const di= document.getElementById('dinner');
@@ -55,7 +55,7 @@ console.log(breakfast)
             div.classList.add('col-md-8');
             divbutton.classList.add('col-md-4');
             button.classList.add('btn', 'btn-sm', 'btn-danger');
-            button.setAttribute("data-id","element.id");
+            button.setAttribute("data-id",element.id);
             header.innerHTML = element.food_name
             totalCalories.innerHTML = element.calorie_count_per_serving * element.calorie_count_servings;
             button.innerHTML= "Delete";
@@ -82,7 +82,7 @@ console.log(breakfast)
             div.classList.add('col-md-8');
             divbutton.classList.add('col-md-4');
             button.classList.add('btn', 'btn-sm', 'btn-danger');
-            button.setAttribute("data-id","element.id");
+            button.setAttribute("data-id",element.id);
             header.innerHTML = element.food_name
             totalCalories.innerHTML = element.calorie_count_per_serving * element.calorie_count_servings;
             button.innerHTML= "Delete";
@@ -109,7 +109,7 @@ console.log(breakfast)
             div.classList.add('col-md-8');
             divbutton.classList.add('col-md-4');
             button.classList.add('btn', 'btn-sm', 'btn-danger');
-            button.setAttribute("data-id","element.id");
+            button.setAttribute("data-id",element.id);
             header.innerHTML = element.food_name
             totalCalories.innerHTML = element.calorie_count_per_serving * element.calorie_count_servings;
             button.innerHTML= "Delete";
