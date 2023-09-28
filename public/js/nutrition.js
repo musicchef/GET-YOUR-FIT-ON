@@ -15,10 +15,7 @@ const mealSetup = async () => {
         const lu=document.getElementById('lunch');
         const di= document.getElementById('dinner');
         const sn= document.getElementById('snack');
-<<<<<<< HEAD
         const ex = document.getElementById('explored');
-=======
->>>>>>> 3d631fd (commented out friends system)
         let allCalories= 0
 console.log(breakfast)
         breakfast.forEach((element)=> {
@@ -140,7 +137,6 @@ console.log(breakfast)
             card.append(divbutton);
             divbutton.append(button);
             
-<<<<<<< HEAD
         });
         explored.forEach((element)=> {
             let card = document.createElement('div');
@@ -171,9 +167,6 @@ console.log(breakfast)
             card.append(divbutton);
             divbutton.append(button);
     })
-=======
-        }); 
->>>>>>> 3d631fd (commented out friends system)
         const alloftheCalories=document.getElementById("totalCalories");
         alloftheCalories.innerHTML= allCalories;     
 
