@@ -47,11 +47,11 @@ function getSearchResults () {
                 return;
             }
             let card = document.createElement('div');
-            let title = document.createElement('h3');
+            let title = document.createElement('h4');
             let calories = document.createElement('p');
             let addFood = document.createElement('button');
 
-            card.classList.add('w-25', 'mx-3', 'my-3', 'bg-light', 'rounded');
+            card.classList.add('card', 'my-3', 'mx-3', 'explore_card');
             title.innerHTML = element.description;
             card.append(title);
             calories.innerHTML = `${element.foodNutrients[3].value}`;
@@ -108,32 +108,63 @@ function getExerciseResults () {
         let counter = 0;
         exerciseArray.forEach(element => {
             let card = document.createElement('div');
-            let title = document.createElement('h3');
+            let title = document.createElement('h4');
+            let cardBody = document.createElement('div');
             let minutes_description = document.createElement('h5')
             let minutes = document.createElement('p');
             let calories_description = document.createElement('h5')
             let calories = document.createElement('p');
             let addExercise = document.createElement('button');
 
-            card.classList.add('w-25', 'mx-3', 'my-3', 'bg-light');
+            card.classList.add('card', 'my-3', 'mx-3', 'explore_card');
             title.innerHTML = element.name;
+            title.classList.add('card-header')
             card.append(title);
+            cardBody.classList.add('card-body')
             minutes_description.innerHTML = 'Duration of Exercise (minutes):';
-            card.append(minutes_description);
+            cardBody.append(minutes_description);
             minutes.innerHTML = element.duration_minutes;
-            card.append(minutes);
+            cardBody.append(minutes);
             calories_description.innerHTML = 'Calories Burned Per Hour:';
-            card.append(calories_description);
+            cardBody.append(calories_description);
             calories.innerHTML = element.calories_per_hour;
-            card.append(calories)
+            cardBody.append(calories)
             addExercise.innerHTML = 'Add to My Exercise List';
             addExercise.setAttribute('id',`uniqueID${counter}`);
-            card.append(addExercise)
-
+            addExercise.classList.add('btn')
+            cardBody.append(addExercise)
+            card.append(cardBody)
             root.append(card)
 
             counter++
         })
+        for (let i = 0; i < exerciseArray.length; i++){
+            document
+            .querySelector(`#uniqueID${i}`)
+            .addEventListener('click', async (event) => {
+                let title = event.target.parentNode.parentNode.firstElementChild.innerHTML
+                let duration = 60;
+                let calories_per_hour = event.target.previousElementSibling.innerHTML;
+                try {
+                    const response = await fetch('/api/workouts/create', {
+                        method: 'POST',
+                        body: JSON.stringify({
+                            title: title,
+                            minutes: duration,
+                            calories_per_hour: calories_per_hour
+                        }),
+                        headers: {
+                            'Content-Type': 'application/json',
+                          },
+                    })
+                    if(response.ok) {
+                        alert(`Added to today's exercises!`)
+                    }
+                } catch (err) {
+                    console.error(err);
+                }
+            })
+        }
     })
 }
 

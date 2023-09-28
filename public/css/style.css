@@ -34,3 +34,13 @@ li {
     color: #1a1a1a;
     cursor: pointer;
 }
+
+.explore_card {
+    width: 500px;
+}
+
+.explore_card_title {
+    text-align: center;
+    background-color: darkcyan;
+    margin-bottom: .5rem;
+}
