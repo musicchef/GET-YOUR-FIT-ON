@@ -21,6 +21,22 @@ router.get('/', withAuth, async (req, res) => {
     }
 });
 
+router.get('/getmeal', withAuth, async (req, res) => {
+  try {
+      const nutritionData = await Nutrition.findAll({
+            where: {
+              user_id: req.session.user_id,
+              meal_date : dayjs().format('YYYY-MM-DD')  
+            } 
+      });
+      const nutrition = nutritionData.map((nutrition)=> nutrition.get({plain: true}));
+      res.json(nutrition)
+      
+  } catch (err) {
+      res.status(500).json(err);
+  }
+});
+
 
 router.post('/create', withAuth, async (req, res) => {
     try {
@@ -82,59 +98,7 @@ router.delete('/:id', withAuth, async (req, res) => {
   });
 
 
-router.get('/', async (req, res) => {
-  try {
-    const exerciseData = await Exercise.findAll({
-      order: [['exercise_date', 'DESC']], 
-      limit: 5, 
-  }); 
-     const exercise = exerciseData.map((exercise) => exercise.get({ plain: true }));
-     res.render('homepage', { 
-       exercise, 
-       logged_in: req.session.logged_in 
-     });
-    
-  } catch (err) {
-    console.error(err);
-    res.status(500).json({ error: 'Internal Server Error' });
-  }
-});
 
-router.get('/login', (req, res) => {
-  if (req.session.logged_in) {
-    res.redirect('/user');
-    return;
-  }
-  try{
-    res.render('login');
-  } catch (err) {
-    console.error(err);
-    res.status(500).json({ error: 'Internal Server Error'})
-  }
-});
-
-
-router.get('/signup', (req, res) => {
-  res.render('signup');
-});
-
-router.get('/', async (req, res) => {
-  try {
-    const friendData = await Friend.findAll({
-      order: [['first_name', 'DESC']], 
-      limit: 5, 
-  }); 
-     const friend = friendData.map((friend) => friend.get({ plain: true }));
-     res.render('friends', { 
-       friend, 
-       logged_in: req.session.logged_in 
-     });
-    
-  } catch (err) {
-    console.error(err);
-    res.status(500).json({ error: 'Internal Server Error' });
-  }
-});
 
 router.post('/explore', withAuth, async (req, res) => {
   try {

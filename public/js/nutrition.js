@@ -1,12 +1,11 @@
-
-
 const mealSetup = async () => {
-    const response = await fetch ('/api/food', {
+    
+    const response = await fetch ('/api/food/getmeal', {
          method: 'GET',
         })
         const data =await response.json();
        
-
+console.log(data)
         const breakfast = data.filter((meal)=> meal.meal_name==="Breakfast")
         const lunch = data.filter((meal)=> meal.meal_name==="Lunch")
         const dinner = data.filter((meal)=> meal.meal_name==="Dinner");
@@ -15,7 +14,7 @@ const mealSetup = async () => {
         const lu=document.getElementById('lunch');
         const di= document.getElementById('dinner');
         const sn= document.getElementById('snack');
-
+console.log(breakfast)
         breakfast.forEach((element)=> {
             let card = document.createElement('div');
             let div= document.createElement('div');

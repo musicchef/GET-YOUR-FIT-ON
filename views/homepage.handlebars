@@ -5,17 +5,17 @@
   </div>
 </div>
 
-
+<div class="text-center">
 <h3> Recent Exercises: </h3>
   {{#each exercise as |exercise|}}
     <div class="row mb-2">
-      <div class="col-md-8">
+      <div class="col-md-12">
         <h5>{{exercise.title}}</h4>
-        <ul>
-            <li>Calories burned per hour: {{exercise.calories_per_hour}}</li>
+        <ul class="list-unstyled" >
+            <li >Calories burned per hour: {{exercise.calories_per_hour}}</li>
         </ul>
       </div>
     </div>
   {{/each}}
-
+</div>
  
