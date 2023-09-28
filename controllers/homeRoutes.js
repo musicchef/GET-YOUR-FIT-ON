@@ -123,7 +123,10 @@ router.get('/login', (req, res) => {
 });
 
 router.get("/friends", (req, res) => {
-  res.render('friend');
+  res.render('friend', {
+    logged_in: req.session.logged_in
+  }
+  );
 })
 
 

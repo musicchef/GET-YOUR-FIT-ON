@@ -14,6 +14,7 @@ const mealSetup = async () => {
         const lu=document.getElementById('lunch');
         const di= document.getElementById('dinner');
         const sn= document.getElementById('snack');
+        let allCalories= 0
 console.log(breakfast)
         breakfast.forEach((element)=> {
             let card = document.createElement('div');
@@ -27,10 +28,13 @@ console.log(breakfast)
             card.classList.add('row', 'mb-2');
             div.classList.add('col-md-8');
             divbutton.classList.add('col-md-4');
+            totalCalories.classList.add('totalCalories')
             button.classList.add('btn', 'btn-sm', 'btn-danger');
             button.setAttribute("data-id",element.id);
             header.innerHTML = element.food_name
-            totalCalories.innerHTML = element.calorie_count_per_serving * element.calorie_count_servings;
+            let itemCalories= element.calorie_count_per_serving * element.calorie_count_servings
+            allCalories += itemCalories
+            totalCalories.innerHTML =itemCalories;
             button.innerHTML= "Delete";
 
             bf.append(card);
@@ -53,11 +57,14 @@ console.log(breakfast)
 
             card.classList.add('row', 'mb-2');
             div.classList.add('col-md-8');
+            totalCalories.classList.add('totalCalories')
             divbutton.classList.add('col-md-4');
             button.classList.add('btn', 'btn-sm', 'btn-danger');
             button.setAttribute("data-id",element.id);
             header.innerHTML = element.food_name
-            totalCalories.innerHTML = element.calorie_count_per_serving * element.calorie_count_servings;
+            let itemCalories= element.calorie_count_per_serving * element.calorie_count_servings
+            allCalories += itemCalories
+            totalCalories.innerHTML =itemCalories;
             button.innerHTML= "Delete";
 
             lu.append(card);
@@ -81,10 +88,13 @@ console.log(breakfast)
             card.classList.add('row', 'mb-2');
             div.classList.add('col-md-8');
             divbutton.classList.add('col-md-4');
+            totalCalories.classList.add('totalCalories')
             button.classList.add('btn', 'btn-sm', 'btn-danger');
             button.setAttribute("data-id",element.id);
             header.innerHTML = element.food_name
-            totalCalories.innerHTML = element.calorie_count_per_serving * element.calorie_count_servings;
+            let itemCalories= element.calorie_count_per_serving * element.calorie_count_servings
+            allCalories += itemCalories
+            totalCalories.innerHTML =itemCalories;
             button.innerHTML= "Delete";
 
             di.append(card);
@@ -108,10 +118,13 @@ console.log(breakfast)
             card.classList.add('row', 'mb-2');
             div.classList.add('col-md-8');
             divbutton.classList.add('col-md-4');
+            totalCalories.classList.add('totalCalories')
             button.classList.add('btn', 'btn-sm', 'btn-danger');
             button.setAttribute("data-id",element.id);
             header.innerHTML = element.food_name
-            totalCalories.innerHTML = element.calorie_count_per_serving * element.calorie_count_servings;
+            let itemCalories= element.calorie_count_per_serving * element.calorie_count_servings
+            allCalories += itemCalories
+            totalCalories.innerHTML =itemCalories;
             button.innerHTML= "Delete";
 
             sn.append(card);
@@ -122,10 +135,12 @@ console.log(breakfast)
             card.append(divbutton);
             divbutton.append(button);
             
-        });
+        }); 
+        const alloftheCalories=document.getElementById("totalCalories");
+        alloftheCalories.innerHTML= allCalories;     
+
     }
     
-        
  mealSetup()   
 
 

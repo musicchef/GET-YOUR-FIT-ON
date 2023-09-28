@@ -29,5 +29,6 @@ module.exports = {
     nutrition.forEach(function(nutrition) {
       total+= nutrition.calorie_count_per_serving * nutrition.calorie_count_servings
     })
+    return total.toFixed(2)
   }
 }

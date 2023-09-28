@@ -1,7 +1,7 @@
 {{#if logged_in}}
 <h2 class="text-center">Welcome {{ username }}</h2>
 
-<section class="profile-pic text-center">
+<!-- <section class="profile-pic text-center">
     <img src="{{ profile_photo }}" alt="{{ username }}" class="profile-picture">
 </section>
 <section class="uploadForm m-5  text-center">
@@ -11,7 +11,7 @@
         <input type="file" id="profilePhotoInput" accept="image/*" name="profile_photo" />
         <button type="submit">Upload</button>
     </form>
-</section>
+</section> -->
 
 <div class="row">
 <section class="user-activities col-md-6 ">
@@ -40,15 +40,15 @@
 </section>
 </div>
     <footer class="row bg-light">
-        <div class="myExercises col-md-3 mx-5">
+        <div class="myExercises col-md-5 mx-5">
     <button type="button" class="btn btn-primary btn-lg " id="exerciseButton" onclick="window.location.href='/api/workouts'">My Exercises</button>
         </div>
-    <div class="myNutrition col-md-3 mx-5">
+    <div class="myNutrition col-md-5 mx-5">
     <button type="button" class="btn btn-primary btn-lg " id="nutritionButton">My Nutrition</button>
         </div>
 
-    <div class="myFriends col-md-3 mx-5">
-        <button type="button" class="btn btn-primary btn-lg " id="friendsButton">My Friends</button>
+    <!-- <div class="myFriends col-md-3 mx-5">
+        <button type="button" class="btn btn-primary btn-lg " id="friendsButton">My Friends</button> -->
 </div>
 </footer>
 <script src="/js/userHandlebars.js"></script>
