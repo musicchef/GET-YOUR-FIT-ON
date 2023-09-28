@@ -43,12 +43,19 @@ Deploy the live application via https://get-your-fit-on-92db4f8ac46c.herokuapp.c
 ## Usage
 
 To use the Fitness App, you must first create an account. Once you have created an account, you can log in and start logging your exercise and nutrition.
+![Log In](<assets/Screenshot 2023-09-27 221323.png>)
 
 To log your exercise, go to the "Exercise" page and click the "Add Exercise" button. You can then enter the details of your exercise, such as the type of exercise, the duration, and the number of calories burned.
+![Exercise](<assets/Screenshot 2023-09-27 221540.png>)
 
 To log your nutrition, go to the "Nutrition" page and click the "Add Food" button. You can then enter the details of the food you ate, such as the name of the food, the serving size, and the calories.
+![Nutrition](<assets/Screenshot 2023-09-27 221624.png>)
+
+To look up calories for nutrition, go to the "Explore" page and search there.
+![Explore](<assets/Screenshot 2023-09-27 225138.png>)
 
 The Fitness App will automatically calculate your calorie intake and calorie burn for each day. You can view your progress by going to the "Progress" page.
+![Profile](<assets/Screenshot 2023-09-27 224922.png>)
 
 ## Contributing
 
@@ -72,4 +79,4 @@ Deployed live application https://get-your-fit-on-92db4f8ac46c.herokuapp.com/
 
 Git Repository https://github.com/musicchef/fitness-application
 
-![Screenshot of website](<images/Screenshot 2023-08-01 191417.png>)
+![Screenshot of website](<assets/Screenshot 2023-09-27 221221.png>)
