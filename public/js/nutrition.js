@@ -39,7 +39,7 @@ console.log(breakfast)
             header.innerHTML = element.food_name
             let itemCalories= element.calorie_count_per_serving * element.calorie_count_servings
             allCalories += itemCalories
-            totalCalories.innerHTML =itemCalories;
+            totalCalories.innerHTML ="Total Calories: "+itemCalories;
             button.innerHTML= "Delete";
 
             bf.append(card);
@@ -69,7 +69,7 @@ console.log(breakfast)
             header.innerHTML = element.food_name
             let itemCalories= element.calorie_count_per_serving * element.calorie_count_servings
             allCalories += itemCalories
-            totalCalories.innerHTML =itemCalories;
+            totalCalories.innerHTML ="Total Calories: "+itemCalories;
             button.innerHTML= "Delete";
 
             lu.append(card);
@@ -99,7 +99,7 @@ console.log(breakfast)
             header.innerHTML = element.food_name
             let itemCalories= element.calorie_count_per_serving * element.calorie_count_servings
             allCalories += itemCalories
-            totalCalories.innerHTML =itemCalories;
+            totalCalories.innerHTML ="Total Calories: "+itemCalories;
             button.innerHTML= "Delete";
 
             di.append(card);
@@ -129,7 +129,7 @@ console.log(breakfast)
             header.innerHTML = element.food_name
             let itemCalories= element.calorie_count_per_serving * element.calorie_count_servings
             allCalories += itemCalories
-            totalCalories.innerHTML =itemCalories;
+            totalCalories.innerHTML ="Total Calories: "+itemCalories;
             button.innerHTML= "Delete";
 
             sn.append(card);
