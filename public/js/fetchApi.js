@@ -83,7 +83,7 @@ function getSearchResults () {
                         method: 'POST',
                         body: JSON.stringify({
                             food_name: food_name,
-                            meal_name: 'Lunch',
+                            meal_name: 'Explored',
                             calorie_count_per_serving: parseInt(calories),
                             calorie_count_servings: 1
                         }),

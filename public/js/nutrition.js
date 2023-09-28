@@ -10,10 +10,12 @@ const mealSetup = async () => {
         const lunch = data.filter((meal)=> meal.meal_name==="Lunch")
         const dinner = data.filter((meal)=> meal.meal_name==="Dinner");
         const snack = data.filter((meal)=> meal.meal_name==="Snacks");
+        const explored = data.filter((meal) => meal.meal_name==="Explored")
         const bf= document.getElementById('breakfast')
         const lu=document.getElementById('lunch');
         const di= document.getElementById('dinner');
         const sn= document.getElementById('snack');
+        const ex = document.getElementById('explored');
         let allCalories= 0
 console.log(breakfast)
         breakfast.forEach((element)=> {
@@ -135,7 +137,36 @@ console.log(breakfast)
             card.append(divbutton);
             divbutton.append(button);
             
-        }); 
+        });
+        explored.forEach((element)=> {
+            let card = document.createElement('div');
+            let div= document.createElement('div');
+            let header= document.createElement ('h5');
+            let ul = document.createElement('ul');
+            let totalCalories = document.createElement('li');
+            let divbutton= document.createElement('div');
+            let button= document.createElement('button');
+
+            card.classList.add('row', 'mb-2');
+            div.classList.add('col-md-8');
+            divbutton.classList.add('col-md-4');
+            totalCalories.classList.add('totalCalories')
+            button.classList.add('btn', 'btn-sm', 'btn-danger');
+            button.setAttribute("data-id",element.id);
+            header.innerHTML = element.food_name
+            let itemCalories= element.calorie_count_per_serving * element.calorie_count_servings
+            allCalories += itemCalories
+            totalCalories.innerHTML =itemCalories;
+            button.innerHTML= "Delete";
+
+            ex.append(card);
+            card.append(div);
+            div.append(header);
+            div.append(ul);
+            ul.append(totalCalories);
+            card.append(divbutton);
+            divbutton.append(button);
+    })
         const alloftheCalories=document.getElementById("totalCalories");
         alloftheCalories.innerHTML= allCalories;     
 
