@@ -1,12 +1,14 @@
 {{#if logged_in}}
 
-<div class="row text-center">
-  <div class="col-auto">
-    <h2>Hi, {{username}} you're in the Nutrition section!</h2>
-    <h3>What have you eaten today?</h3>
-  </div>
 
-  <form class="meal-choice" id="meal-choice-form" data-id="{{id}}">
+ <h2 class="text-center">Hi, {{username}} you're in the Nutrition section!</h2>
+    <h3 class="text-center">What have you eaten today?</h3>
+  
+<div class="row mt-4">
+  <a class="col-md-4" href="/api/food">
+        <button class="btn btn-lg btn-primary " id="returnfood" >Return to Nutrition</button>
+      </a>
+  <form class="meal-choice col-md-6" id="meal-choice-form" data-id="{{id}}">
     <div class="form-group">
       <label for="categories">Which Meal is this?</label>
         <select class="form-control" id="meal-name">
@@ -32,7 +34,8 @@
         <button type="submit" class="btn btn-primary" >Add Food</button>
       </div>
   </form>
-</div>
+  </div>
+
 
  <script src="./js/newmeal.js"></script>
 {{/if}}

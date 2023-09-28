@@ -1,9 +1,10 @@
 {{#if logged_in}}
-<h2>{{ username }}</h2>
-<section class="profile-pic">
+<h2 class="text-center">Welcome {{ username }}</h2>
+
+<section class="profile-pic text-center">
     <img src="{{ profile_photo }}" alt="{{ username }}" class="profile-picture">
 </section>
-<section class="uploadForm">
+<section class="uploadForm m-5  text-center">
     <h2>Upload Profile Photo</h2>
     <form id="profilePhotoForm" enctype="multipart/form-data">
     {{!-- enctype set to multipart/form-data is necessary for encoding a file upload to process binary data to a server and or cloud--}}
@@ -11,7 +12,9 @@
         <button type="submit">Upload</button>
     </form>
 </section>
-<section class="user-activities">
+
+<div class="row">
+<section class="user-activities col-md-6 ">
     <h2>Today's Exercises</h2>
     <ul>
         {{#each exercises as |exercise|}}
@@ -23,7 +26,7 @@
         {{/each}}
     </ul>
 </section>
-<section class="user-nutrition">
+<section class="user-nutrition col-md-6 ">
     <h2>Today's Nutrition</h2>
     <ul>
         {{#each nutrition as |nutrition|}}
@@ -35,17 +38,18 @@
         {{/each}}
     </ul>
 </section>
-
-<div class="myExercises">
-    <button type="button" class="btn btn-primary" id="exerciseButton" onclick="window.location.href='/api/workouts'">My Exercises</button>
 </div>
-<div class="myNutrition">
-    <button type="button" class="btn btn-primary" id="nutritionButton">My Nutrition</button>
-</div>
+    <footer class="row bg-light">
+        <div class="myExercises col-md-3 mx-5">
+    <button type="button" class="btn btn-primary btn-lg " id="exerciseButton" onclick="window.location.href='/api/workouts'">My Exercises</button>
+        </div>
+    <div class="myNutrition col-md-3 mx-5">
+    <button type="button" class="btn btn-primary btn-lg " id="nutritionButton">My Nutrition</button>
+        </div>
 
-<div class="myFriends">
-    <button type="button" class="btn btn-primary" id="friendsButton">My Friends</button>
+    <div class="myFriends col-md-3 mx-5">
+        <button type="button" class="btn btn-primary btn-lg " id="friendsButton">My Friends</button>
 </div>
-
+</footer>
 <script src="/js/userHandlebars.js"></script>
 {{/if}}

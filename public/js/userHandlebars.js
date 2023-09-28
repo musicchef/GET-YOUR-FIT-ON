@@ -42,6 +42,8 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
+
+
 const nutritionButton = document.getElementById('nutritionButton');
 const exerciseButton = document.getElementById('exerciseButton');
 const friendsButton = document.getElementById('friendsButton');

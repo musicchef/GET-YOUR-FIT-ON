@@ -1,21 +1,21 @@
 
-<div class="row">
+<div class="row text-center">
   <div class="col-auto">
     <h1>Welcome to Get Your Fit On!!</h1>
   </div>
 </div>
 
-
-<p> The most recent exercises used:
+<div class="text-center">
+<h3> Recent Exercises: </h3>
   {{#each exercise as |exercise|}}
     <div class="row mb-2">
-      <div class="col-md-8">
-        <h4>{{exercise.title}}</h4>
-        <ul>
-            <li>Calories burned per hour: {{exercise.calories_per_hour}}</li>
+      <div class="col-md-12">
+        <h5>{{exercise.title}}</h4>
+        <ul class="list-unstyled" >
+            <li >Calories burned per hour: {{exercise.calories_per_hour}}</li>
         </ul>
       </div>
     </div>
   {{/each}}
-</p>
+</div>
  

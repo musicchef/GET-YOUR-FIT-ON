@@ -1,6 +1,12 @@
 {{#if logged_in}}
-<h2>Add your exercise</h2>
- <form class="form exercise-form" id="new-exercise-form" data-id="{{id}}">
+
+<h2 class="text-center">Add your exercise</h2>
+
+<div class="row mt-4">
+  <a class="col-md-4" href="/api/workouts">
+        <button class="btn btn-lg btn-primary " id="returnexercise" >Return to Exercise</button>
+      </a>
+  <form class="form exercise-form col-md-6" id="new-exercise-form" data-id="{{id}}">
       <div class="form-group">
         <label for="categories">Categories</label>
             <select class="form-control" id="categoriesselect1">
@@ -32,6 +38,7 @@
         <button type="submit" class="btn btn-primary" >Add Exercise</button>
       </div>
   </form>
+  </div>
 
   <script src="./js/newexercise.js"></script>
 
