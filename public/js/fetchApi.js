@@ -48,17 +48,25 @@ function getSearchResults () {
             }
             let card = document.createElement('div');
             let title = document.createElement('h4');
+            let cardBody = document.createElement('div');
+            let calories_description = document.createElement('h5');
             let calories = document.createElement('p');
             let addFood = document.createElement('button');
 
             card.classList.add('card', 'my-3', 'mx-3', 'explore_card');
             title.innerHTML = element.description;
+            title.classList.add('card-header')
             card.append(title);
+            cardBody.classList.add('card-body')
+            calories_description.innerHTML = 'Calories per serving:';
+            cardBody.append(calories_description);
             calories.innerHTML = `${element.foodNutrients[3].value}`;
-            card.append(calories)
+            cardBody.append(calories)
             addFood.innerHTML = 'Add to My Food List'
             addFood.setAttribute('id',`uniqueID${counter}`)
-            card.append(addFood)
+            addFood.classList.add('btn')
+            cardBody.append(addFood)
+            card.append(cardBody)
 
             root.append(card)
 
@@ -68,15 +76,15 @@ function getSearchResults () {
             document
             .querySelector(`#uniqueID${i}`)
             .addEventListener('click', async (event) => {
-                console.log(Number(event.target.previousElementSibling.innerHTML));
-                const calories = event.target.previousElementSibling.innerHTML
+                let food_name = event.target.parentNode.parentNode.firstElementChild.innerHTML
+                let calories = event.target.previousElementSibling.innerHTML
                 try {
                     const response = await fetch('api/food/explore', {
                         method: 'POST',
                         body: JSON.stringify({
-                            food_name: `${String(event.target.previousElementSibling.previousElementSibling.innerHTML)}`,
+                            food_name: food_name,
                             meal_name: 'Lunch',
-                            calorie_count_per_servings: parseInt(event.target.previousElementSibling.innerHTML),
+                            calorie_count_per_serving: parseInt(calories),
                             calorie_count_servings: 1
                         }),
                         headers: {
