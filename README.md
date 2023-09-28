@@ -7,7 +7,6 @@
 
 - [Features](#features)
 - [Installation](#installation)
-- [Deployment](#deployment)
 - [Usage](#usage)
 - [Contributing](#contributing)
 - [License](#license)
@@ -23,51 +22,23 @@ Calorie counting and calculation
 Progress tracking
 Packages
 
-The Fitness App uses the following Python packages:
+The Fitness App uses the following packages:
 
-bcrypt: For password hashing
-cloudinary: For image uploading and storage
-connect-session-sequelize: For user session management
-dayjs: For date and time manipulation
-dotenv: For managing environment variables
-express: For web framework
-express-handlebars: For template engine
-express-session: For user session management
-multer: For file uploading
-mysql2: For MySQL database connection
-sequelize: For object-relational mapping (ORM)
+- bcrypt: For password hashing
+- cloudinary: For image uploading and storage
+- connect-session-sequelize: For user session management
+- dayjs: For date and time manipulation
+- dotenv: For managing environment variables
+- express: For web framework
+- express-handlebars: For template engine
+- express-session: For user session management
+- multer: For file uploading
+- mysql2: For MySQL database connection
+- sequelize: For object-relational mapping (ORM)
 
 ## Installation
 
-To install the Fitness App, you will need to have the following installed:
-
-Python 3.6+
-MySQL 5.7+
-Node.js 16+
-NPM 6+
-Once you have the required dependencies installed, you can clone the Fitness App repository and install the dependencies:
-
-git clone https://github.com/your-username/fitness-app.git
-cd fitness-app
-pip install -r requirements.txt
-npm install
-Next, you will need to create a .env file and add your database connection information:
-
-DATABASE_HOST=localhost
-DATABASE_PORT=3306
-DATABASE_USERNAME=root
-DATABASE_PASSWORD=password
-DATABASE_NAME=fitness_app
-Finally, you can start the development server and access the app at http://localhost:3000:
-
-npm start
-
-## Deployment
-
-The Fitness App is deployed on Heroku. To deploy the app to Heroku, you will need to create a Heroku account and install the Heroku CLI. Once you have the Heroku CLI installed, you can deploy the app to Heroku by running the following commands:
-
-git push heroku master
-This will deploy the app to Heroku and make it accessible at the URL that Heroku assigns to it.
+Deploy the live application via https://get-your-fit-on-92db4f8ac46c.herokuapp.com/
 
 ## Usage
 
