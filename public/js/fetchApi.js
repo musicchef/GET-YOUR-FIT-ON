@@ -18,7 +18,7 @@ async function exerciseFormHandler (input) {
     try {
         const response = await fetch(url, options);
         const result = await response.json();
-        console.log(result)
+        return result;
     } catch (err) {
         console.log(err)
     }
@@ -103,8 +103,37 @@ function getExerciseResults () {
         for(let i = 0; i < result.length; i++) {
             exerciseArray.push(result[i]);
         }
+        console.log(exerciseArray)
 
-        
+        let counter = 0;
+        exerciseArray.forEach(element => {
+            let card = document.createElement('div');
+            let title = document.createElement('h3');
+            let minutes_description = document.createElement('h5')
+            let minutes = document.createElement('p');
+            let calories_description = document.createElement('h5')
+            let calories = document.createElement('p');
+            let addExercise = document.createElement('button');
+
+            card.classList.add('w-25', 'mx-3', 'my-3', 'bg-light');
+            title.innerHTML = element.name;
+            card.append(title);
+            minutes_description.innerHTML = 'Duration of Exercise (minutes):';
+            card.append(minutes_description);
+            minutes.innerHTML = element.duration_minutes;
+            card.append(minutes);
+            calories_description.innerHTML = 'Calories Burned Per Hour:';
+            card.append(calories_description);
+            calories.innerHTML = element.calories_per_hour;
+            card.append(calories)
+            addExercise.innerHTML = 'Add to My Exercise List';
+            addExercise.setAttribute('id',`uniqueID${counter}`);
+            card.append(addExercise)
+
+            root.append(card)
+
+            counter++
+        })
     })
 }
 
