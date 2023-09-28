@@ -30,7 +30,7 @@ module.exports = {
       total+= nutrition.calorie_count_per_serving * nutrition.calorie_count_servings
     })
     return total.toFixed(2)
-  }
+  },
 
     totalMealCalories:function(nutrition) {
     var total = 0;

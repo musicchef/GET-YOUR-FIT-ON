@@ -6,6 +6,24 @@ async function nutritionFormHandler(input) {
     return data.json();
 };
 
+async function exerciseFormHandler (input) {
+    event.preventDefault();
+    const url = `https://api.api-ninjas.com/v1/caloriesburned?activity=${input}`
+    const options =  {
+        method: 'GET',
+        headers: {
+            'X-Api-Key': 'JhDl2v6hLoPFwL/VC29omw==Bp5FlGGZdn0Fgso6'
+        }
+    }
+    try {
+        const response = await fetch(url, options);
+        const result = await response.json();
+        console.log(result)
+    } catch (err) {
+        console.log(err)
+    }
+}
+
 function clearDOM() {
     root.textContent = ''
 }
@@ -76,6 +94,24 @@ function getSearchResults () {
     })
 };
 
+function getExerciseResults () {
+    clearDOM();
+    let exerciseArray = [];
+    let userInput = document.querySelector('#exercise').value.trim();
+    exerciseFormHandler(userInput)
+    .then((result) => {
+        for(let i = 0; i < result.length; i++) {
+            exerciseArray.push(result[i]);
+        }
+
+        
+    })
+}
+
 document
 .querySelector('#search-nutrition')
 .addEventListener('submit', getSearchResults);
+
+document
+.querySelector('#search-exercises')
+.addEventListener('submit', getExerciseResults);
