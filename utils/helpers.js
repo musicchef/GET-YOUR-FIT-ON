@@ -22,6 +22,14 @@ module.exports = {
     });
       
     return total.toFixed(2);
+  },
+
+  totalNutritionCalories: function(nutrition){
+    var total =0;
+    nutrition.forEach(function(nutrition) {
+      total+= nutrition.calorie_count_per_serving * nutrition.calorie_count_servings
+    })
+    return total.toFixed(2)
   }
 
     totalMealCalories:function(nutrition) {

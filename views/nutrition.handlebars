@@ -1,7 +1,7 @@
 {{#if logged_in}}
 <div class="row text-center">
   <div class="col-auto">
-    <h2>Welcome, {{username}} to the Nutrition HomePage</h2>
+    <h2>Welcome to the Nutrition HomePage</h2>
   </div>
 </div>
 
@@ -12,6 +12,7 @@
 {{#if nutrition.length}} 
    <div class="col-md-6 meal-list">
     <h3>Today's Meals:</h3>
+
 
     <h4 class="meal_name" id="breakfast"> Breakfast </h4>
     
@@ -27,7 +28,7 @@
   </div>
  {{/if}}
 
-  <h3> Total Calories Eaten Today: </h3>
+  <h3> Total Calories Eaten Today: <span id="totalCalories"></span></h3>
  
 </div>
 <script src="/js/nutrition.js"></script>
