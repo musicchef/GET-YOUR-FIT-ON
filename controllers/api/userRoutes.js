@@ -59,6 +59,7 @@ router.post('/signup', async (req, res) => {
     } else {
       res.status(404).end();
     }
+    res.render('login')
   });
 
   router.post('/upload', withAuth, upload.single('profile_photo'), async (req, res) => {
