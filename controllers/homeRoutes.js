@@ -25,6 +25,7 @@ router.get('/', async (req, res) => {
 
 router.get('/profile', withAuth, async (req, res) => {
   try {
+    console.log("hello");
     const userData = await User.findByPk(req.session.user_id, {
       attributes: {exclude: ['password']},
 
@@ -33,19 +34,20 @@ router.get('/profile', withAuth, async (req, res) => {
           model: Exercise,
           where: {exercise_date: dayjs().format('YYYY-MM-DD') }
         },
-        {
-          model:Nutrition,
-        where: {meal_date: dayjs().format('YYYY-MM-DD')}
+        {model:Nutrition,
+         where: {meal_date: dayjs().format('YYYY-MM-DD')}
       }
       ]
   });
    
-  const user = userData!=null?userData.get({plain: true}):[];
+  const user = userData!=null?userData.get({plain: true}):[]
+  console.log(user);
    res.render('user', {
     ...user,
     logged_in: true
    });
   } catch(err) {
+    console.log(err)
     res.status(500).json(err);
   }
 })
