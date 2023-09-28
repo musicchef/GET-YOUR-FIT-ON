@@ -19,12 +19,13 @@ li {
     border-width: 1px;
 }
 
-.remove_button_css { 
+.remove_button_css {
+    width: fit-content;
+    text-align: left;
     color: rgba(0,0,0,.5);
     outline: none;
-    padding: 5px; 
+    padding: .5rem 0rem; 
     border: 0px; 
-    box-sizing: none; 
     background-color: transparent; 
   }
 

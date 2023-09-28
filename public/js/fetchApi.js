@@ -51,7 +51,7 @@ function getSearchResults () {
             let calories = document.createElement('p');
             let addFood = document.createElement('button');
 
-            card.classList.add('w-25', 'mx-3', 'my-3', 'bg-light');
+            card.classList.add('w-25', 'mx-3', 'my-3', 'bg-light', 'rounded');
             title.innerHTML = element.description;
             card.append(title);
             calories.innerHTML = `${element.foodNutrients[3].value}`;
