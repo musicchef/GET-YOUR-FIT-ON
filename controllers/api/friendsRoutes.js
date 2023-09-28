@@ -2,7 +2,7 @@ const router = require('express').Router();
 const { User, Friend } = require('../../models/')
 const withAuth = require('../../utils/auth');
 
-router.get('/', async (req, res) => {
+router.get('/friends', async (req, res) => {
   try {
     // Retrieve pending friend requests and current friends for the logged-in user
     const user = await User.findByPk(req.session.user_id, {
@@ -26,7 +26,7 @@ router.get('/', async (req, res) => {
     const friends = user.friends.map((friend) => friend.user.get({ plain: true }));
 
     // Render the friends.handlebars template with the data
-    res.render('friends', { pendingRequests, friends, logged_in: req.session.logged_in });
+    res.render('friend', { pendingRequests, friends, logged_in: req.session.logged_in });
   } catch (err) {
     res.status(500).json(err);
   }
