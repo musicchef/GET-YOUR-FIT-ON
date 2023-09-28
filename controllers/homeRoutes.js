@@ -33,12 +33,14 @@ router.get('/profile', withAuth, async (req, res) => {
           model: Exercise,
           where: {exercise_date: dayjs().format('YYYY-MM-DD') }
         },
-        {model:Nutrition,
-        where: {meal_date: dayjs().format('YYYY-MM-DD')}}
+        {
+          model:Nutrition,
+        where: {meal_date: dayjs().format('YYYY-MM-DD')}
+      }
       ]
   });
    
-  const user = userData.get({plain: true});
+  const user = userData!=null?userData.get({plain: true}):[];
    res.render('user', {
     ...user,
     logged_in: true
