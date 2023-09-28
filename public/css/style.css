@@ -19,6 +19,7 @@ li {
     border-width: 1px;
 }
 
+
 .remove_button_css {
     width: fit-content;
     text-align: left;
@@ -44,3 +45,4 @@ li {
     background-color: darkcyan;
     margin-bottom: .5rem;
 }
+

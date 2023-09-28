@@ -30,15 +30,5 @@ module.exports = {
       total+= nutrition.calorie_count_per_serving * nutrition.calorie_count_servings
     })
     return total.toFixed(2)
-  },
-
-    totalMealCalories:function(nutrition) {
-    var total = 0;
-    nutrition.forEach(function(nutrition) {
-        // total += calculateCalories(exercise.minutes, exercise.calories_perhour);
-        total += (nutrition.calorie_count_servings) + exercise.calories_per_hour
-    });
-      
-    return total.toFixed(2);
   }
 }
