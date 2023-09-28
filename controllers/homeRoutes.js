@@ -122,6 +122,10 @@ router.get('/login', (req, res) => {
   res.render('login');
 });
 
+router.get("/friends", (req, res) => {
+  res.render('friend');
+})
+
 
 
 router.get('/signup', (req, res) => {

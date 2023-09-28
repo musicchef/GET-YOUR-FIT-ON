@@ -57,7 +57,7 @@ exerciseButton.addEventListener('click', function () {
 });
 
 friendsButton.addEventListener('click', function () {
-    window.location.href = '/api/friends';
+    window.location.href = '/friends';
 });
 
 const uploadForm = document.getElementById('uploadForm');
