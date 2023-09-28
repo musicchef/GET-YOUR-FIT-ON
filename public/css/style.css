@@ -18,3 +18,18 @@ li {
     border-style: solid;
     border-width: 1px;
 }
+
+.remove_button_css { 
+    color: rgba(0,0,0,.5);
+    outline: none;
+    padding: 5px; 
+    border: 0px; 
+    box-sizing: none; 
+    background-color: transparent; 
+  }
+
+.remove_button_css:focus,
+.remove_button_css:hover {
+    color: #1a1a1a;
+    cursor: pointer;
+}
