@@ -51,8 +51,6 @@ function getSearchResults () {
             .querySelector(`#uniqueID${i}`)
             .addEventListener('click', async (event) => {
                 const calories = parseInt(event.target.previousElementSibling.innerHTML)
-                console.log(calories);
-                console.log(event.target.previousElementSibling.previousElementSibling.innerHTML);
                 try {
                     const response = await fetch('api/food/explore', {
                         method: 'POST',
