@@ -1,8 +1,10 @@
+//what we require in
 const router = require('express').Router();
 const { User, Exercise } = require('../../models/');
 const withAuth = require('../../utils/auth');
 const dayjs = require('dayjs');
 
+//get route for exercise main page
 router.get('/', withAuth, async (req, res) => {
     try {
       console.log(req.session);
@@ -24,6 +26,7 @@ router.get('/', withAuth, async (req, res) => {
     }
 });
 
+//post route to add a new exercise
 router.post('/create', withAuth, async (req, res) => {
     try {
       const newExerciseData = await Exercise.create({
@@ -40,6 +43,7 @@ router.post('/create', withAuth, async (req, res) => {
     }
   }); 
 
+  //delete route to delete based on the id
 router.delete('/:id', withAuth, async (req, res) => {
     try {
       const exerciseData = await Exercise.destroy({
@@ -60,6 +64,7 @@ router.delete('/:id', withAuth, async (req, res) => {
     }
   });
 
+  //not currently used but room for further development
   router.put('/:id', withAuth, async (req, res) => {
     try {
       const exerciseUpdate = await Exercise.update(req.body,{

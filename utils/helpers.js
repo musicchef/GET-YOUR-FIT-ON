@@ -7,13 +7,14 @@ module.exports = {
     // format large numbers with commas
     return parseInt(amount).toLocaleString();
   },
+  //calculate exercise calories
   calculateCalories: function(exercise) {
     console.log(exercise, 11);
     const caloriesBurned=  (exercise.minutes / 60) * exercise.calories_per_hour
     //console.log(typeof exercise.calories_per_hour)
     return caloriesBurned.toFixed(2);
   },
-
+//calculate total calories for all exercises
   totalCalories:function(exercises) {
     var total = 0;
     exercises.forEach(function(exercise) {
@@ -23,7 +24,7 @@ module.exports = {
       
     return total.toFixed(2);
   },
-
+//not currently used
   totalNutritionCalories: function(nutrition){
     var total =0;
     nutrition.forEach(function(nutrition) {

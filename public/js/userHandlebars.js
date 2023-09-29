@@ -1,3 +1,4 @@
+//calculating calories burned for each exercise
 document.addEventListener('DOMContentLoaded', function () {
     // Function to calculate calories burned
     function calculateCaloriesBurned(exercise) {
@@ -48,6 +49,7 @@ const nutritionButton = document.getElementById('nutritionButton');
 const exerciseButton = document.getElementById('exerciseButton');
 const friendsButton = document.getElementById('friendsButton');
 
+//event listeners for nutrition and exercise buttons
 nutritionButton.addEventListener('click', function () {
     window.location.href = '/api/food';
 });
@@ -55,7 +57,7 @@ nutritionButton.addEventListener('click', function () {
 exerciseButton.addEventListener('click', function () {
     window.location.href = '/api/workouts';
 });
-
+//not currently being used room for future development
 friendsButton.addEventListener('click', function () {
     window.location.href = '/friends';
 });
@@ -71,6 +73,7 @@ uploadForm.addEventListener('submit', async function (event) {
     formData.append('profile_photo', profilePhotoInput.files[0]);
 
     try {
+    //posting upload based on user data however this does not work at this point future development
         const response = await fetch('/api/user/upload', {
             method: 'POST',
             body: formData,

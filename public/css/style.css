@@ -1,6 +1,8 @@
+/* universal  */
 * {
     
 }
+/* elemental */
 body {
     margin:15px !important;
 }
@@ -12,6 +14,7 @@ li {
     font-size: 1REM;
 }
 
+/* class selectors */
 .meal_name {
     padding: 10px;
     width: 500px;

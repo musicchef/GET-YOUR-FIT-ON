@@ -1,3 +1,4 @@
+//adding multer middleware for the cloudinary not currently used
 const multer = require('multer');
 
 const storage = multer.diskStorage({

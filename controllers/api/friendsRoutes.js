@@ -1,7 +1,10 @@
+//this who page is not currently connected but room for further development
+//what we require in
 const router = require('express').Router();
 const { User, Friend } = require('../../models/')
 const withAuth = require('../../utils/auth');
 
+//get route to get the friends
 router.get('/friends', async (req, res) => {
   try {
     // Retrieve pending friend requests and current friends for the logged-in user
@@ -68,6 +71,7 @@ router.post('/request', async (req, res) => {
   }
 });
 
+//delete a friend based on the id
 router.delete('/:id', withAuth, async (req, res) => {
     try {
       const friendData = await Friend.destroy({

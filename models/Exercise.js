@@ -1,9 +1,12 @@
+//what we require in
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 const dayjs = require('dayjs');
 
+//extending class model
 class Exercise extends Model {}
 
+//the table sections
 Exercise.init(
   {
     id: {
