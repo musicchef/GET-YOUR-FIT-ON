@@ -1,8 +1,10 @@
+//what we require in
 const router = require('express').Router();
 const { User, Nutrition, Exercise, Friend } = require('../../models/');
 const withAuth = require('../../utils/auth');
 const dayjs = require('dayjs');
 
+//get route to get all the nutrition data
 router.get('/', withAuth, async (req, res) => {
     try {
         const nutritionData = await Nutrition.findAll({
@@ -21,6 +23,7 @@ router.get('/', withAuth, async (req, res) => {
     }
 });
 
+//get route to get the meal data
 router.get('/getmeal', withAuth, async (req, res) => {
   try {
       const nutritionData = await Nutrition.findAll({
@@ -37,7 +40,7 @@ router.get('/getmeal', withAuth, async (req, res) => {
   }
 });
 
-
+//post route to create a new food
 router.post('/create', withAuth, async (req, res) => {
     try {
       const newfood = await Nutrition.create({
@@ -54,7 +57,7 @@ router.post('/create', withAuth, async (req, res) => {
     }
   });
 
-
+//delete route to delete a food based on the id
 router.delete('/:id', withAuth, async (req, res) => {
     try {
       const nutritionData = await Nutrition.destroy({
@@ -75,6 +78,7 @@ router.delete('/:id', withAuth, async (req, res) => {
     }
   });
 
+  //this is not currently used but room for further development
   router.put('/:id', withAuth, async (req, res) => {
     try {
       const nutritionUpdate = await Nutrition.update(req.body,{
@@ -98,7 +102,7 @@ router.delete('/:id', withAuth, async (req, res) => {
   });
 
 
-
+//post route for the explore
 
 router.post('/explore', withAuth, async (req, res) => {
   try {

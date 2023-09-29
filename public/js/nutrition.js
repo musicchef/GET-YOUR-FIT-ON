@@ -5,19 +5,20 @@ const mealSetup = async () => {
         })
         const data =await response.json();
        
-
+//filter the data based on the meal_name
         const breakfast = data.filter((meal)=> meal.meal_name==="Breakfast")
         const lunch = data.filter((meal)=> meal.meal_name==="Lunch")
         const dinner = data.filter((meal)=> meal.meal_name==="Dinner");
         const snack = data.filter((meal)=> meal.meal_name==="Snacks");
         const explored = data.filter((meal) => meal.meal_name==="Explored")
+        //hook into the DOM
         const bf= document.getElementById('breakfast')
         const lu=document.getElementById('lunch');
         const di= document.getElementById('dinner');
         const sn= document.getElementById('snack');
         const ex = document.getElementById('explored');
         let allCalories= 0
-console.log(breakfast)
+//card made for each breakfast item
         breakfast.forEach((element)=> {
             let card = document.createElement('div');
             let div= document.createElement('div');
@@ -48,6 +49,7 @@ console.log(breakfast)
             divbutton.append(button);
             
         }) 
+        //all the sections for lunch
         lunch.forEach(element=> {
             let card = document.createElement('div');
             let div= document.createElement('div');
@@ -78,6 +80,7 @@ console.log(breakfast)
             divbutton.append(button);
             
         });
+        //card created for each for dinner
         dinner.forEach(element=> {
             let card = document.createElement('div');
             let div= document.createElement('div');
@@ -108,6 +111,7 @@ console.log(breakfast)
             divbutton.append(button);
             
         });
+        //card created for each snack
         snack.forEach(element=> {
             let card = document.createElement('div');
             let div= document.createElement('div');
@@ -138,6 +142,7 @@ console.log(breakfast)
             divbutton.append(button);
             
         });
+        //card created for each explored
         explored.forEach((element)=> {
             let card = document.createElement('div');
             let div= document.createElement('div');
@@ -174,7 +179,7 @@ console.log(breakfast)
     
  mealSetup()   
 
-
+//delete button  and deleting nutrition items based on data-id
 const delButtonHandler = async (event) => {
     if (event.target.hasAttribute('data-id')) {
         const id = event.target.getAttribute('data-id');

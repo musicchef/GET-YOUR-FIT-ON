@@ -1,5 +1,5 @@
 const createMealButton = document.querySelector('.meal-choice');
-
+//creating a new meal based on what they chose and inserted
 const createMeal = async (event) => {
   event.preventDefault();
   const meal = document.querySelector('#meal-name').value;
@@ -9,7 +9,8 @@ const createMeal = async (event) => {
   
   if (meal&&food&&calPerServing&&servings) {
     try {
-    const response = await fetch('/api/food/create', {
+    //posting to nutrition table the new meal
+      const response = await fetch('/api/food/create', {
         method: 'POST',
         body: JSON.stringify({ 
           food_name: food, 

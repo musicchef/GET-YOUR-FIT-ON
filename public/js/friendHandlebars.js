@@ -1,3 +1,4 @@
+//This whole section is not used at this time room for future development
 // document.addEventListener('DOMContentLoaded', () => {
 //     // Function to send a friend request
 //     const friendSearchForm = document.getElementById('friend-search-form');

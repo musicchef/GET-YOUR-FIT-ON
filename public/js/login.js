@@ -1,3 +1,4 @@
+//handler for log in that posts an email and password and checks if that is in the table
 const loginFormHandler = async (event) => {
     event.preventDefault();
   

@@ -27,7 +27,7 @@ async function exerciseFormHandler (input) {
 function clearDOM() {
     root.textContent = ''
 }
-
+//takes search results and puts them into a card
 function getSearchResults () {
     clearDOM()
     let foodsArray = []
@@ -72,6 +72,7 @@ function getSearchResults () {
 
             counter++;
         });
+        //takes search results and selected item posts to food
         for(let i = 0; i < foodsArray.length; i++) {
             document
             .querySelector(`#uniqueID${i}`)
@@ -102,6 +103,7 @@ function getSearchResults () {
     })
 };
 
+//takes exercise results and puts them in a card
 function getExerciseResults () {
     clearDOM();
     let exerciseArray = [];
@@ -146,6 +148,7 @@ function getExerciseResults () {
 
             counter++
         })
+        //based on what is added takes data and posts to exercise
         for (let i = 0; i < exerciseArray.length; i++){
             document
             .querySelector(`#uniqueID${i}`)

@@ -1,9 +1,11 @@
+//what we require in
 const { Model, DataTypes } = require("sequelize");
 const sequelize = require("../config/connection");
 
-
+//model is extended
 class Nutrition extends Model {}
 
+//sections for the table
 Nutrition.init(
 	{
 		id: {

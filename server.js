@@ -1,3 +1,4 @@
+//what we require in
 const path = require('path');
 const express = require('express');
 const session = require('express-session');
@@ -15,6 +16,7 @@ const PORT = process.env.PORT || 3001;
 
 const hbs = exphbs.create({helpers});
 
+//log in to the session
 const sess = {
     secret: process.env.SESSION_SECRET,
     cookie: {
@@ -29,7 +31,7 @@ const sess = {
         db: sequelize
     })
 };
-
+//everything we need to use
 app.use(session(sess));
 
 app.engine('handlebars', hbs.engine);

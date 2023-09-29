@@ -1,9 +1,11 @@
+//what we requrie in
 const router = require('express').Router();
 const { User } = require('../../models/');
 const cloudinary = require('../../utils/cloudinary');
 const upload = require('../../middleware/multer');
 const withAuth = require('../../utils/auth');
 
+//posting for sign up
 router.post('/signup', async (req, res) => {
     try {
       const userData = await User.create(req.body);
@@ -19,6 +21,7 @@ router.post('/signup', async (req, res) => {
     }
   });
 
+  //posting for log in
   router.post('/login', async (req, res) => {
     try {
       const userData = await User.findOne({ where: { email: req.body.email } });
@@ -51,6 +54,7 @@ router.post('/signup', async (req, res) => {
     }
   });
   
+  //posting for log out
   router.post('/logout', (req, res) => {
     if (req.session.logged_in) {
       req.session.destroy(() => {
@@ -62,6 +66,7 @@ router.post('/signup', async (req, res) => {
     res.render('login')
   });
 
+  //does not currently get use will be used in further development
   router.post('/upload', withAuth, upload.single('profile_photo'), async (req, res) => {
     try {
       if (!req.file) {
@@ -88,6 +93,6 @@ router.post('/signup', async (req, res) => {
     }
   });
   
-  // I think it might not be working because it requires more code in server.js but this is driving me crazy!!!!!!!
+
   
 module.exports = router;

@@ -1,3 +1,4 @@
+//what we require in
 const sequelize = require('../config/connection');
 const { User, Exercise, Friend, Nutrition } = require('../models');
 
@@ -6,6 +7,7 @@ const exerciseData = require('./exerciseData.json');
 const nutritionData = require('./nutritionData.json');
 const friendsData = require('./friendsData.json');
 
+//creating the seeds
 const seedDatabase = async () => {
   await sequelize.sync({ force: true });
 

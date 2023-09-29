@@ -1,9 +1,12 @@
+//looking for form
 const createExerciseButton = document.querySelector('#new-exercise-form');
 
+//creating a new exercise in the database
 const createExercise = async (event) => {
   event.preventDefault();
   const exercise = document.querySelector('#categoriesselect1').value;
   const time= document.querySelector('#duration').value;
+  //how to set calories per hour based on exercise chosen
   let caloriesphour= ''
   if (exercise === 'Run') {
         caloriesphour= 808;
@@ -46,7 +49,8 @@ const createExercise = async (event) => {
   };
   if (exercise&&time ) {
     try {
-    const response = await fetch('/api/workouts/create', {
+    //posting new exercise to the exercise table
+      const response = await fetch('/api/workouts/create', {
         method: 'POST',
         body: JSON.stringify({ 
           title: exercise, 
@@ -69,5 +73,5 @@ const createExercise = async (event) => {
 }}
 ;
 
-
+//event listener of the form
 createExerciseButton.addEventListener('submit', createExercise);

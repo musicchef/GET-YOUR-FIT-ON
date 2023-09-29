@@ -1,3 +1,4 @@
+//logs the user out of the system on the log out button
 const logout = async () => {
     const response = await fetch('/api/user/logout', {
       method: 'POST',

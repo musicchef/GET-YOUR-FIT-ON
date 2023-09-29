@@ -1,8 +1,9 @@
+//what we require in 
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
-
+//extending the model
 class Friend extends Model {}
-
+//sections for the table
 Friend.init(
   {
     id: {
