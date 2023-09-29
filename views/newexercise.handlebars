@@ -1,3 +1,4 @@
+<!-- This code checks if the user is logged in. -->
 {{#if logged_in}}
 
 <h2 class="text-center">Add your exercise</h2>
@@ -6,6 +7,7 @@
   <a class="col-md-4" href="/api/workouts">
         <button class="btn btn-lg btn-primary " id="returnexercise" >Return to Exercise</button>
       </a>
+      <!-- This form element creates a form for adding a new exercise. -->
   <form class="form exercise-form col-md-6" id="new-exercise-form" data-id="{{id}}">
       <div class="form-group">
         <label for="categories">Categories</label>
