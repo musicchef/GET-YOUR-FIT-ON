@@ -1,3 +1,4 @@
+<!-- This code checks if the user is logged in. -->
 {{#if logged_in}}
 <div class="row text-center">
   <div class="col-auto">
@@ -10,10 +11,12 @@
         <button class="btn btn-lg btn-primary " id="newexercise-btn" >Add New Exercise</button>
       </a>
 
+<!-- This checks if the exercises array has any elements. -->
 {{#if exercises.length}}
    <div class="col-md-6 exercise-list">
     <h3>Today's Exercises:</h3>
 
+<!-- This loop iterates over the exercises array. -->
     {{#each exercises as |exercise|}}
     <div class="row mb-2">
       <div class="col-md-8">
@@ -32,6 +35,7 @@
   </div>
   {{/if}}
 
+  <!-- This displays the total number of calories burned for the day. -->
   <h3> Total Calories Burned Today: {{totalCalories exercises}}</h3>
 </div>
 

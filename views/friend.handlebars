@@ -1,7 +1,10 @@
-<!--<div class="friend-requests">
+<!--
+  
+  <div class="friend-requests">
   <h1>Friend Requests</h1>
   {{#if pendingRequests}}
   <ul>
+    <! This Handlebars template conditional checks if the pendingRequests array has any elements. >
     {{#each pendingRequests}}
     <li>
       <span>{{user.username}} wants to be your friend</span>
@@ -26,6 +29,8 @@
 </div>
 
   <h1>Current Friends</h1>
+
+  <! This Handlebars template conditional checks if the friends array has any elements >
   {{#if friends}}
   <ul>
     {{#each friends}}
